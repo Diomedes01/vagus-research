@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #FAFAFA;
+  --bg-white: #FFFFFF;
+  --bg-dark: #0A1628;
+  --bg-dark-mid: #111D33;
+  --accent-blue: #2D7DD2;
+  --accent-teal: #00B8A9;
+  --accent-teal-light: rgba(0,184,169,0.08);
+  --text-primary: #1A1A2E;
+  --text-body: #374151;
+  --text-muted: #6B7280;
+  --text-light: #9CA3AF;
+  --border: #E5E7EB;
+  --border-light: #F3F4F6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--text-body);
+  background-color: var(--bg-primary);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D1D5DB;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9CA3AF;
+}
+
+/* Article prose overrides */
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  font-family: 'Newsreader', Georgia, serif;
+}
+
+.prose h2 {
+  margin-top: 2.5em;
+  margin-bottom: 0.75em;
+}
+
+.prose h3 {
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+}
+
+.prose p {
+  margin-bottom: 1.25em;
+  line-height: 1.8;
+}
+
+.prose ul,
+.prose ol {
+  margin-bottom: 1.25em;
+}
+
+.prose li {
+  margin-bottom: 0.5em;
+}
+
+/* Key finding callout */
+.key-finding {
+  border-left: 3px solid var(--accent-teal);
+  background: var(--accent-teal-light);
+  padding: 1.25rem 1.5rem;
+  margin: 2rem 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.key-finding p {
+  margin: 0;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* Smooth page transitions */
+main {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}

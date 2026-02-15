@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://vagusresearch.com.au
+
+# Sitemaps
+Sitemap: https://vagusresearch.com.au/sitemap.xml
