@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://vagusresearch.com.au/evidence</loc><lastmod>2026-02-15T04:32:50.433Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://vagusresearch.com.au/videos</loc><lastmod>2026-02-15T04:32:50.433Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://vagusresearch.com.au/library</loc><lastmod>2026-02-15T04:32:50.433Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://vagusresearch.com.au/about</loc><lastmod>2026-02-15T04:32:50.433Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://vagusresearch.com.au</loc><lastmod>2026-02-15T04:32:50.433Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://vagusresearch.com.au/library/is-vns-safe</loc><lastmod>2026-02-15T04:32:50.433Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://vagusresearch.com.au/library/vns-for-anxiety</loc><lastmod>2026-02-15T04:32:50.433Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://vagusresearch.com.au/library/what-is-vns</loc><lastmod>2026-02-15T04:32:50.433Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://vagusresearch.com.au/api/articles</loc><lastmod>2026-02-15T04:32:50.433Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://vagusresearch.com.au/api/articles</loc><lastmod>2026-02-15T21:50:23.856Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://vagusresearch.com.au/about</loc><lastmod>2026-02-15T21:50:23.856Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://vagusresearch.com.au/library</loc><lastmod>2026-02-15T21:50:23.856Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://vagusresearch.com.au/evidence</loc><lastmod>2026-02-15T21:50:23.856Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://vagusresearch.com.au/videos</loc><lastmod>2026-02-15T21:50:23.856Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://vagusresearch.com.au</loc><lastmod>2026-02-15T21:50:23.856Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://vagusresearch.com.au/library/is-vns-safe</loc><lastmod>2026-02-15T21:50:23.856Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://vagusresearch.com.au/library/vns-for-anxiety</loc><lastmod>2026-02-15T21:50:23.856Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://vagusresearch.com.au/library/what-is-vns</loc><lastmod>2026-02-15T21:50:23.856Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
 </urlset>

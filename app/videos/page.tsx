@@ -1,6 +1,13 @@
 import { Metadata } from 'next'
 import VideoCard from '@/components/VideoCard'
-import { generateMetadata as genMeta } from '@/lib/seo'
+import { generateMetadata as genMeta, generateVideoPageJsonLd } from '@/lib/seo'
+
+const jsonLd = generateVideoPageJsonLd({
+  name: 'Vagus Nerve Stimulation Videos',
+  description:
+    'Educational video content covering vagus nerve stimulation science, mechanisms of action, research summaries, and clinical applications.',
+  url: 'https://vagusresearch.com.au/videos',
+})
 
 export const metadata: Metadata = genMeta({
   title: 'Videos',
@@ -71,6 +78,10 @@ const videos = [
 export default function VideosPage() {
   return (
     <div className="max-w-layout mx-auto px-6 py-16 md:py-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="mb-12">
         <p className="font-mono text-[11px] tracking-[0.1em] uppercase text-text-light mb-2">
           Watch & Learn

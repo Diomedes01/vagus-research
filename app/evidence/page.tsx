@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import EvidenceTable from '@/components/EvidenceTable'
-import { generateMetadata as genMeta } from '@/lib/seo'
+import { generateMetadata as genMeta, generateDatasetJsonLd } from '@/lib/seo'
 import evidenceData from '@/content/evidence.json'
 import { Study } from '@/lib/evidence'
 
@@ -14,8 +14,20 @@ export const metadata: Metadata = genMeta({
 export default function EvidencePage() {
   const studies = evidenceData as Study[]
 
+  const jsonLd = generateDatasetJsonLd({
+    name: 'Vagus Nerve Stimulation Evidence Database',
+    description:
+      'A curated collection of peer-reviewed research on vagus nerve stimulation, including RCTs, meta-analyses, and systematic reviews.',
+    url: 'https://vagusresearch.com.au/evidence',
+    size: studies.length,
+  })
+
   return (
     <div className="max-w-layout mx-auto px-6 py-16 md:py-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="mb-12">
         <p className="font-mono text-[11px] tracking-[0.1em] uppercase text-text-light mb-2">
           Peer-Reviewed Research

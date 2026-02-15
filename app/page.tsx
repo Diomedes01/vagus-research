@@ -1,9 +1,17 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import ArticleCard from '@/components/ArticleCard'
 import StatsBar from '@/components/StatsBar'
 import NewsletterForm from '@/components/NewsletterForm'
 import { getFeaturedArticles } from '@/lib/articles'
-import { generateOrganizationJsonLd, generateWebsiteJsonLd } from '@/lib/seo'
+import { generateMetadata as genMeta, generateOrganizationJsonLd, generateWebsiteJsonLd } from '@/lib/seo'
+
+export const metadata: Metadata = genMeta({
+  title: 'The Science of Vagus Nerve Stimulation',
+  description:
+    'An academic research platform dedicated to vagus nerve stimulation science. Curated evidence from 177+ studies, peer-reviewed articles, and educational resources.',
+  path: '',
+})
 
 const topics = [
   'Anxiety',

@@ -124,3 +124,114 @@ export function generateWebsiteJsonLd() {
     },
   }
 }
+
+export function generateCollectionPageJsonLd({
+  name,
+  description,
+  url,
+}: {
+  name: string
+  description: string
+  url: string
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name,
+    description,
+    url,
+    isPartOf: {
+      '@type': 'WebSite',
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    provider: {
+      '@type': 'Organization',
+      name: siteConfig.name,
+    },
+  }
+}
+
+export function generateDatasetJsonLd({
+  name,
+  description,
+  url,
+  size,
+}: {
+  name: string
+  description: string
+  url: string
+  size: number
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Dataset',
+    name,
+    description,
+    url,
+    creator: {
+      '@type': 'Organization',
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    distribution: {
+      '@type': 'DataDownload',
+      contentUrl: url,
+      encodingFormat: 'text/html',
+    },
+    size: `${size} studies`,
+  }
+}
+
+export function generateAboutPageJsonLd() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: `About ${siteConfig.name}`,
+    description: siteConfig.description,
+    url: `${siteConfig.url}/about`,
+    mainEntity: {
+      '@type': 'Organization',
+      name: siteConfig.name,
+      url: siteConfig.url,
+      description: siteConfig.description,
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Melbourne',
+        addressRegion: 'Victoria',
+        addressCountry: 'AU',
+      },
+      parentOrganization: {
+        '@type': 'Organization',
+        name: siteConfig.creator,
+      },
+    },
+  }
+}
+
+export function generateVideoPageJsonLd({
+  name,
+  description,
+  url,
+}: {
+  name: string
+  description: string
+  url: string
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name,
+    description,
+    url,
+    about: {
+      '@type': 'Thing',
+      name: 'Vagus Nerve Stimulation',
+    },
+    isPartOf: {
+      '@type': 'WebSite',
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+  }
+}
