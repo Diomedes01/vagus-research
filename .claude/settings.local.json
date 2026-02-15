@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm init:*)",
+      "Bash(npm install:*)",
+      "Bash(ls:*)",
+      "Bash(npm run build:*)",
+      "Bash(lsof:*)",
+      "Bash(git -C /Users/andrewbolis/vagus-research init:*)",
+      "Bash(git -C /Users/andrewbolis/vagus-research status:*)",
+      "Bash(git -C /Users/andrewbolis/vagus-research log --oneline -5)",
+      "Bash(git -C /Users/andrewbolis/vagus-research add .eslintrc.json .gitignore CLAUDE.md app/ components/ content/articles/ content/evidence.json content/subscribers.json lib/ next-sitemap.config.js next.config.js package-lock.json package.json postcss.config.js public/ styles/ tailwind.config.ts tsconfig.json)",
+      "Bash(git -C /Users/andrewbolis/vagus-research diff --cached --stat)",
+      "Bash(git -C:*)",
+      "Bash(gh repo create:*)",
+      "Bash(brew install:*)"
+    ]
+  }
+}

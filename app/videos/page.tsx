@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import VideoCard from '@/components/VideoCard'
+import FadeIn from '@/components/FadeIn'
 import { generateMetadata as genMeta, generateVideoPageJsonLd } from '@/lib/seo'
 
 const jsonLd = generateVideoPageJsonLd({
@@ -18,60 +19,60 @@ export const metadata: Metadata = genMeta({
 
 const videos = [
   {
-    title: 'What Is the Vagus Nerve? An Animated Explainer',
-    topic: 'Foundation',
-    duration: '6:30',
-    description:
-      'A clear, animated overview of vagus nerve anatomy, function, and its role in the autonomic nervous system.',
-  },
-  {
-    title: 'How Vagus Nerve Stimulation Works: Mechanism of Action',
+    title: 'How Vagus Nerve Stimulation Works',
     topic: 'Foundation',
     duration: '8:45',
     description:
-      'Understanding how electrical stimulation of the vagus nerve modulates neural circuits and inflammatory pathways.',
+      'A clear explanation of how electrical stimulation of the vagus nerve modulates neural circuits, autonomic balance, and inflammatory pathways.',
   },
   {
-    title: 'taVNS vs iVNS: Comparing Stimulation Methods',
-    topic: 'Foundation',
-    duration: '5:15',
-    description:
-      'A side-by-side comparison of transcutaneous auricular and implanted vagus nerve stimulation approaches.',
-  },
-  {
-    title: 'VNS for Epilepsy: 30 Years of Evidence',
-    topic: 'Epilepsy',
-    duration: '10:20',
-    description:
-      'Reviewing three decades of clinical data on vagus nerve stimulation as an adjunctive treatment for drug-resistant epilepsy.',
-  },
-  {
-    title: 'The Vagus Nerve and Inflammation: Research Summary',
+    title: 'The Cholinergic Anti-Inflammatory Pathway',
     topic: 'Inflammation',
-    duration: '7:00',
+    duration: '7:20',
     description:
-      'How the cholinergic anti-inflammatory pathway connects vagal tone to systemic inflammation.',
+      'How the vagus nerve regulates systemic inflammation through acetylcholine signalling and the spleen — the basis of bioelectronic medicine.',
   },
   {
-    title: 'Heart Rate Variability and Vagal Tone Explained',
-    topic: 'Heart Health',
+    title: 'taVNS vs Implanted VNS',
+    topic: 'Foundation',
     duration: '6:10',
     description:
-      'Understanding HRV as a biomarker for vagal function and its clinical significance.',
+      'Comparing transcutaneous auricular stimulation with surgically implanted devices — mechanisms, evidence, safety profiles, and clinical applications.',
   },
   {
-    title: 'VNS in Mental Health: Depression and Anxiety Research',
+    title: 'Vagus Nerve and Sleep',
+    topic: 'Sleep',
+    duration: '9:15',
+    description:
+      'Exploring the relationship between vagal tone, parasympathetic activity, and sleep architecture — what the research shows about VNS and sleep quality.',
+  },
+  {
+    title: 'Understanding the Auricular Branch',
+    topic: 'Foundation',
+    duration: '5:30',
+    description:
+      'The anatomy of the auricular branch of the vagus nerve (ABVN) — why the ear is a gateway to non-invasive vagus nerve stimulation.',
+  },
+  {
+    title: 'VNS for Anxiety and Stress',
     topic: 'Anxiety',
-    duration: '9:30',
+    duration: '10:00',
     description:
-      'Reviewing the clinical evidence for vagus nerve stimulation in treatment-resistant depression and anxiety disorders.',
+      'Reviewing the clinical evidence for vagus nerve stimulation in anxiety disorders — from autonomic regulation to amygdala modulation.',
   },
   {
-    title: 'The Gut-Brain Axis and the Vagus Nerve',
-    topic: 'Gut Health',
-    duration: '7:45',
+    title: 'The Safety Profile of taVNS',
+    topic: 'Safety',
+    duration: '6:45',
     description:
-      'Exploring how the vagus nerve mediates communication between the gut microbiome and the central nervous system.',
+      'What 177 studies and 6,322 subjects tell us about the safety and tolerability of transcutaneous auricular vagus nerve stimulation.',
+  },
+  {
+    title: 'Future of Neuromodulation',
+    topic: 'Foundation',
+    duration: '11:30',
+    description:
+      'Where the field is heading — personalised stimulation protocols, closed-loop systems, biomarker-guided dosing, and combination therapies.',
   },
 ]
 
@@ -82,52 +83,50 @@ export default function VideosPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="mb-12">
-        <p className="font-mono text-[11px] tracking-[0.1em] uppercase text-text-light mb-2">
-          Watch & Learn
-        </p>
-        <h1 className="font-display text-4xl md:text-[44px] text-text-primary mb-4">
-          Videos
-        </h1>
-        <p className="text-text-muted max-w-2xl">
-          Educational video content covering vagus nerve stimulation science, mechanisms of
-          action, research summaries, and clinical applications.
-        </p>
-      </div>
 
-      {/* Category filters */}
-      <div className="flex flex-wrap gap-2 mb-10">
-        {['All', 'Foundation', 'Epilepsy', 'Inflammation', 'Heart Health', 'Anxiety', 'Gut Health'].map(
-          (cat) => (
-            <span
-              key={cat}
-              className="px-3.5 py-1.5 bg-white border border-border rounded-full text-sm font-medium text-text-muted"
-            >
-              {cat}
-            </span>
-          )
-        )}
-      </div>
+      <FadeIn>
+        <div className="mb-12">
+          <p className="font-mono text-[11px] tracking-[0.1em] uppercase text-text-light mb-2">
+            Watch & Learn
+          </p>
+          <h1 className="font-display text-4xl md:text-[44px] text-text-primary mb-4">
+            Videos
+          </h1>
+          <p className="text-text-muted max-w-2xl">
+            Educational video content covering vagus nerve stimulation science, mechanisms of
+            action, research summaries, and clinical applications.
+          </p>
+        </div>
+      </FadeIn>
 
       {/* Coming soon notice */}
-      <div className="bg-accent-teal-light border border-accent-teal/20 rounded-xl p-6 mb-10">
-        <p className="text-sm text-text-body">
-          <strong className="text-text-primary">Coming soon:</strong> We are producing original
-          video content covering vagus nerve stimulation research. Below are planned topics —
-          subscribe to be notified when new videos are published.
-        </p>
-      </div>
+      <FadeIn>
+        <div className="bg-accent-teal-light border border-accent-teal/20 rounded-xl p-5 mb-10 flex items-start gap-3">
+          <svg className="w-5 h-5 text-accent-teal shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+          </svg>
+          <div>
+            <p className="text-sm font-medium text-text-primary mb-1">Video content coming soon</p>
+            <p className="text-sm text-text-body">
+              We are producing original research explainers and educational videos.
+              Subscribe to be notified when new videos are published.
+            </p>
+          </div>
+        </div>
+      </FadeIn>
 
       {/* Video Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {videos.map((video) => (
-          <VideoCard
-            key={video.title}
-            title={video.title}
-            topic={video.topic}
-            duration={video.duration}
-            description={video.description}
-          />
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {videos.map((video, i) => (
+          <FadeIn key={video.title} delay={i * 60}>
+            <VideoCard
+              title={video.title}
+              topic={video.topic}
+              duration={video.duration}
+              description={video.description}
+              episodeNumber={i + 1}
+            />
+          </FadeIn>
         ))}
       </div>
     </div>

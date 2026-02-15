@@ -95,12 +95,36 @@ body {
   font-weight: 500;
 }
 
-/* Smooth page transitions */
+/* Page transition */
 main {
-  animation: fadeIn 0.3s ease-in-out;
+  animation: pageEnter 0.4s ease-out;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(4px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes pageEnter {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Scroll-triggered fade-in */
+.fade-in-element {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.fade-in-element[data-visible="true"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  main {
+    animation: none;
+  }
+  .fade-in-element {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

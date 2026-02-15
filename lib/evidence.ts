@@ -23,6 +23,11 @@ export function getStudyTypes(studies: Study[]): string[] {
   return Array.from(types).sort()
 }
 
+export function getStimulationTypes(studies: Study[]): string[] {
+  const types = new Set(studies.map((s) => s.stimulationType))
+  return Array.from(types).sort()
+}
+
 export function getJournals(studies: Study[]): string[] {
   const journals = new Set(studies.map((s) => s.journal))
   return Array.from(journals).sort()
@@ -33,31 +38,24 @@ export function getYearRange(studies: Study[]): { min: number; max: number } {
   return { min: Math.min(...years), max: Math.max(...years) }
 }
 
-export function filterStudies(
+export interface StudyFilters {
+  condition?: string
+  studyType?: string
+  stimulationType?: string
+  yearMin?: number
+  yearMax?: number
+}
+
+export function applyDropdownFilters(
   studies: Study[],
-  filters: {
-    condition?: string
-    studyType?: string
-    yearMin?: number
-    yearMax?: number
-    searchQuery?: string
-  }
+  filters: StudyFilters
 ): Study[] {
   return studies.filter((study) => {
     if (filters.condition && study.condition !== filters.condition) return false
     if (filters.studyType && study.studyType !== filters.studyType) return false
+    if (filters.stimulationType && study.stimulationType !== filters.stimulationType) return false
     if (filters.yearMin && study.year < filters.yearMin) return false
     if (filters.yearMax && study.year > filters.yearMax) return false
-    if (filters.searchQuery) {
-      const query = filters.searchQuery.toLowerCase()
-      return (
-        study.title.toLowerCase().includes(query) ||
-        study.authors.toLowerCase().includes(query) ||
-        study.journal.toLowerCase().includes(query) ||
-        study.keyFinding.toLowerCase().includes(query) ||
-        study.condition.toLowerCase().includes(query)
-      )
-    }
     return true
   })
 }

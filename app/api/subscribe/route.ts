@@ -1,50 +1,28 @@
 import { NextRequest, NextResponse } from 'next/server'
-import fs from 'fs'
-import path from 'path'
+import { newsletter } from '@/lib/newsletter'
 
-const subscribersFile = path.join(process.cwd(), 'content', 'subscribers.json')
-
-function getSubscribers(): string[] {
-  try {
-    const data = fs.readFileSync(subscribersFile, 'utf8')
-    return JSON.parse(data)
-  } catch {
-    return []
-  }
-}
-
-function saveSubscribers(subscribers: string[]) {
-  fs.writeFileSync(subscribersFile, JSON.stringify(subscribers, null, 2))
-}
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 export async function POST(request: NextRequest) {
   try {
-    const { email } = await request.json()
+    const body = await request.json()
+    const email = typeof body.email === 'string' ? body.email.trim().toLowerCase() : ''
 
-    if (!email || !email.includes('@')) {
+    if (!email || !EMAIL_REGEX.test(email)) {
       return NextResponse.json(
         { error: 'Please provide a valid email address.' },
         { status: 400 }
       )
     }
 
-    const subscribers = getSubscribers()
-
-    if (subscribers.includes(email.toLowerCase())) {
-      return NextResponse.json(
-        { message: 'You are already subscribed.' },
-        { status: 200 }
-      )
-    }
-
-    subscribers.push(email.toLowerCase())
-    saveSubscribers(subscribers)
+    const result = await newsletter.subscribe(email)
 
     return NextResponse.json(
-      { message: 'Thank you. You\u2019ll receive our latest research summaries.' },
+      { message: result.message },
       { status: 200 }
     )
-  } catch {
+  } catch (err) {
+    console.error('[subscribe]', err)
     return NextResponse.json(
       { error: 'Something went wrong. Please try again.' },
       { status: 500 }
