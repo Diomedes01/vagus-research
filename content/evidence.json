@@ -10,6 +10,7 @@
     "subjects": 432,
     "keyFinding": "Transcutaneous VNS demonstrated significant antidepressant effects compared to sham stimulation, with moderate effect sizes across pooled analyses.",
     "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/29631900/",
+    "doi": "https://doi.org/10.1016/j.brs.2017.12.002",
     "stimulationType": "taVNS",
     "tags": ["depression", "taVNS", "meta-analysis", "mental health"]
   },
@@ -24,6 +25,7 @@
     "subjects": 254,
     "keyFinding": "High-stimulation VNS produced a significantly greater reduction in seizure frequency (28%) compared to low-stimulation controls (15%) in drug-resistant epilepsy.",
     "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/9521249/",
+    "doi": "https://doi.org/10.1212/WNL.51.1.48",
     "stimulationType": "iVNS",
     "tags": ["epilepsy", "iVNS", "seizures", "drug-resistant"]
   },
@@ -38,6 +40,7 @@
     "subjects": 160,
     "keyFinding": "Four weeks of taVNS significantly reduced Hamilton Depression Rating Scale scores compared to sham, with a response rate of 37.5% versus 12.5% in controls.",
     "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/27288567/",
+    "doi": "https://doi.org/10.1016/j.jad.2016.05.042",
     "stimulationType": "taVNS",
     "tags": ["depression", "taVNS", "RCT", "mental health"]
   },
@@ -52,6 +55,7 @@
     "subjects": 243,
     "keyFinding": "Non-invasive cervical VNS was safe and well-tolerated for acute migraine treatment, though the primary endpoint of pain-free status at 2 hours did not reach significance versus sham.",
     "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/29504483/",
+    "doi": "https://doi.org/10.1177/0333102418764189",
     "stimulationType": "tcVNS",
     "tags": ["migraine", "tcVNS", "acute treatment", "headache"]
   },
@@ -66,6 +70,7 @@
     "subjects": 17,
     "keyFinding": "Implanted VNS significantly inhibited TNF production and improved clinical signs in rheumatoid arthritis patients, providing direct evidence of the inflammatory reflex in humans.",
     "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/27217568/",
+    "doi": "https://doi.org/10.1073/pnas.1605635113",
     "stimulationType": "iVNS",
     "tags": ["inflammation", "iVNS", "rheumatoid arthritis", "cytokines", "TNF"]
   },
@@ -80,6 +85,7 @@
     "subjects": 1402,
     "keyFinding": "VNS for treatment-resistant depression showed significant response and remission rates across 177 studies, with an acceptable safety profile and mild, transient adverse events.",
     "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/35566448/",
+    "doi": "https://doi.org/10.3390/jcm11133780",
     "stimulationType": "iVNS",
     "tags": ["depression", "treatment-resistant", "safety", "iVNS", "systematic review"]
   },
@@ -94,6 +100,7 @@
     "subjects": 72,
     "keyFinding": "Four weeks of taVNS significantly improved Pittsburgh Sleep Quality Index scores and sleep efficiency in patients with chronic insomnia compared to sham stimulation.",
     "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/32670100/",
+    "doi": "https://doi.org/10.3389/fpsyt.2020.00564",
     "stimulationType": "taVNS",
     "tags": ["sleep", "insomnia", "taVNS", "RCT"]
   },
@@ -108,6 +115,7 @@
     "subjects": 347,
     "keyFinding": "Long-term VNS in paediatric epilepsy showed progressive improvement over 24 months, with 32% of patients achieving at least 50% seizure reduction.",
     "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/25159117/",
+    "doi": "https://doi.org/10.1111/epi.12781",
     "stimulationType": "iVNS",
     "tags": ["epilepsy", "paediatric", "iVNS", "long-term"]
   },
@@ -122,6 +130,7 @@
     "subjects": 34,
     "keyFinding": "taVNS modulated functional connectivity in the default mode network and showed antidepressant effects, suggesting a central mechanism for its therapeutic action in depression.",
     "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/26723109/",
+    "doi": "https://doi.org/10.1016/j.biopsych.2015.10.015",
     "stimulationType": "taVNS",
     "tags": ["depression", "fMRI", "taVNS", "neuroimaging", "default mode network"]
   },
@@ -136,6 +145,7 @@
     "subjects": 108,
     "keyFinding": "VNS paired with rehabilitation significantly improved upper limb motor function compared to rehabilitation with sham stimulation in chronic stroke patients at 90 days.",
     "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/33894832/",
+    "doi": "https://doi.org/10.1016/S0140-6736(21)00475-X",
     "stimulationType": "iVNS",
     "tags": ["stroke", "rehabilitation", "iVNS", "motor function", "neuroplasticity"]
   },
@@ -150,6 +160,7 @@
     "subjects": 18,
     "keyFinding": "Transcutaneous cervical VNS reduced PTSD symptom severity and showed promising effects on autonomic regulation in veterans with combat-related PTSD.",
     "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/28493539/",
+    "doi": "https://doi.org/10.1002/jts.22191",
     "stimulationType": "tcVNS",
     "tags": ["PTSD", "tcVNS", "pilot", "veterans", "autonomic"]
   },
@@ -164,6 +175,7 @@
     "subjects": 7,
     "keyFinding": "Chronic VNS improved clinical and biological markers of Crohn's disease in 5 of 7 patients over 6 months, supporting the role of the cholinergic anti-inflammatory pathway.",
     "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/26920654/",
+    "doi": "https://doi.org/10.1111/nmo.12792",
     "stimulationType": "iVNS",
     "tags": ["inflammation", "Crohn's disease", "iVNS", "cholinergic", "gut health"]
   },
@@ -178,6 +190,7 @@
     "subjects": 86,
     "keyFinding": "taVNS significantly reduced Hamilton Anxiety Rating Scale scores compared to sham over 8 weeks, with treatment response rates of 46.5% versus 20.9% in controls.",
     "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/36716858/",
+    "doi": "https://doi.org/10.1016/j.jad.2023.01.089",
     "stimulationType": "taVNS",
     "tags": ["anxiety", "GAD", "taVNS", "RCT", "mental health"]
   },
@@ -192,6 +205,7 @@
     "subjects": 60,
     "keyFinding": "Chronic VNS was safe and improved left ventricular ejection fraction, heart rate variability, and six-minute walk distance in patients with symptomatic heart failure.",
     "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/25500570/",
+    "doi": "https://doi.org/10.1016/j.cardfail.2014.10.011",
     "stimulationType": "iVNS",
     "tags": ["heart failure", "iVNS", "cardiac", "autonomic", "ANTHEM-HF"]
   },
@@ -206,6 +220,7 @@
     "subjects": 36,
     "keyFinding": "Transcutaneous auricular VNS combined with sound therapy reduced tinnitus severity scores significantly more than sound therapy alone over 8 weeks.",
     "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/34295218/",
+    "doi": "https://doi.org/10.3389/fnins.2021.689987",
     "stimulationType": "taVNS",
     "tags": ["tinnitus", "taVNS", "RCT", "auditory", "sound therapy"]
   },
@@ -220,6 +235,7 @@
     "subjects": 3321,
     "keyFinding": "VNS reduced seizure frequency by at least 50% in approximately half of patients with drug-resistant epilepsy, with greater efficacy observed in generalised versus partial seizures.",
     "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/21838505/",
+    "doi": "https://doi.org/10.3171/2011.4.JNS101909",
     "stimulationType": "iVNS",
     "tags": ["epilepsy", "iVNS", "meta-analysis", "drug-resistant", "seizure reduction"]
   },
@@ -234,6 +250,7 @@
     "subjects": 36,
     "keyFinding": "Transcutaneous auricular VNS significantly reduced pain severity and improved quality of life in fibromyalgia patients compared to sham over 4 weeks of treatment.",
     "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/32199232/",
+    "doi": "https://doi.org/10.1016/j.jns.2020.116749",
     "stimulationType": "taVNS",
     "tags": ["pain", "fibromyalgia", "taVNS", "RCT", "quality of life"]
   },
@@ -248,6 +265,7 @@
     "subjects": 26,
     "keyFinding": "Paired VNS with auditory tones significantly reduced PTSD symptom severity and enhanced fear extinction learning compared to sham stimulation in combat veterans.",
     "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/36958524/",
+    "doi": "https://doi.org/10.1016/j.brs.2023.03.003",
     "stimulationType": "tcVNS",
     "tags": ["PTSD", "tcVNS", "fear extinction", "veterans", "paired stimulation"]
   },
@@ -262,6 +280,7 @@
     "subjects": 32,
     "keyFinding": "Single-session taVNS reduced state anxiety and attenuated cortisol stress responses in healthy volunteers compared to sham, suggesting an anxiolytic mechanism via vagal afferent pathways.",
     "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/31734088/",
+    "doi": "https://doi.org/10.1016/j.brs.2019.11.010",
     "stimulationType": "taVNS",
     "tags": ["anxiety", "taVNS", "cortisol", "healthy volunteers", "stress response"]
   },
@@ -276,6 +295,7 @@
     "subjects": 24,
     "keyFinding": "taVNS significantly enhanced gastric motility and increased vagal efferent activity as measured by electrogastrography, supporting its therapeutic potential for gastrointestinal disorders.",
     "pubmedUrl": "https://pubmed.ncbi.nlm.nih.gov/30924234/",
+    "doi": "https://doi.org/10.1111/nmo.13571",
     "stimulationType": "taVNS",
     "tags": ["gut health", "taVNS", "gastric motility", "gastrointestinal", "healthy volunteers"]
   }

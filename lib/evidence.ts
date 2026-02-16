@@ -9,6 +9,7 @@ export interface Study {
   subjects: number | null
   keyFinding: string
   pubmedUrl: string
+  doi?: string
   stimulationType: string
   tags: string[]
 }

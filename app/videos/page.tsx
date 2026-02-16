@@ -96,22 +96,9 @@ export default function VideosPage() {
             Educational video content covering vagus nerve stimulation science, mechanisms of
             action, research summaries, and clinical applications.
           </p>
-        </div>
-      </FadeIn>
-
-      {/* Coming soon notice */}
-      <FadeIn>
-        <div className="bg-accent-teal-light border border-accent-teal/20 rounded-xl p-5 mb-10 flex items-start gap-3">
-          <svg className="w-5 h-5 text-accent-teal shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-          </svg>
-          <div>
-            <p className="text-sm font-medium mb-1" style={{ color: '#0A1628' }}>Video content coming soon</p>
-            <p className="text-sm" style={{ color: '#374151' }}>
-              We are producing original research explainers and educational videos.
-              Subscribe to be notified when new videos are published.
-            </p>
-          </div>
+          <p className="text-sm mt-3" style={{ color: '#6B7280' }}>
+            New episodes releasing soon. Subscribe to get notified.
+          </p>
         </div>
       </FadeIn>
 

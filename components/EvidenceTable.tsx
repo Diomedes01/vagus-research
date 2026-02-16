@@ -327,49 +327,82 @@ export default function EvidenceTable({ studies }: EvidenceTableProps) {
 
       {/* Results */}
       <div className="space-y-3">
-        {filteredStudies.map((study) => (
-          <a
-            key={study.id}
-            href={study.pubmedUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block bg-white border border-border rounded-xl p-5 hover:shadow-md hover:shadow-black/5 transition-all group"
-          >
-            <div className="flex flex-col md:flex-row md:items-start gap-4">
-              <div className="flex-1 min-w-0">
-                <h3 className="text-sm font-semibold text-text-primary group-hover:text-accent-blue transition-colors leading-snug mb-2">
-                  {study.title}
-                </h3>
-                <p className="text-xs text-text-muted mb-2">
-                  {study.authors} &middot;{' '}
-                  <span className="font-medium">{study.journal}</span> &middot;{' '}
-                  {study.year}
-                </p>
-                <p className="text-sm text-text-body leading-relaxed">
-                  {study.keyFinding}
-                </p>
+        {filteredStudies.map((study) => {
+          const primaryUrl = study.doi || study.pubmedUrl
+          const primaryLabel = study.doi ? 'DOI' : 'PubMed'
+          const hasSecondaryLink = !!study.doi
+
+          return (
+            <div
+              key={study.id}
+              className="bg-white border border-border rounded-xl p-5 hover:shadow-md hover:shadow-black/5 transition-all"
+            >
+              <div className="flex flex-col md:flex-row md:items-start gap-4">
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-sm font-semibold text-text-primary leading-snug mb-2">
+                    {study.title}
+                  </h3>
+                  <p className="text-xs text-text-muted mb-2">
+                    {study.authors} &middot;{' '}
+                    <span className="font-medium">{study.journal}</span> &middot;{' '}
+                    {study.year}
+                  </p>
+                  <p className="text-sm text-text-body leading-relaxed">
+                    {study.keyFinding}
+                  </p>
+                </div>
+                <div className="flex flex-wrap md:flex-col items-start gap-2 md:text-right shrink-0">
+                  <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-mono font-medium bg-accent-teal-light text-accent-teal border border-accent-teal/20">
+                    {study.studyType}
+                  </span>
+                  <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-mono font-medium bg-blue-50 text-blue-700 border border-blue-200">
+                    {study.condition}
+                  </span>
+                  <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-mono font-medium bg-gray-50 text-gray-600 border border-gray-200">
+                    {study.stimulationType}
+                  </span>
+                </div>
               </div>
-              <div className="flex flex-wrap md:flex-col items-start gap-2 md:text-right shrink-0">
-                <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-mono font-medium bg-accent-teal-light text-accent-teal border border-accent-teal/20">
-                  {study.studyType}
-                </span>
-                <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-mono font-medium bg-blue-50 text-blue-700 border border-blue-200">
-                  {study.condition}
-                </span>
-                <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-mono font-medium bg-gray-50 text-gray-600 border border-gray-200">
-                  {study.stimulationType}
-                </span>
+
+              <div className="mt-3 pt-3 border-t border-border-light flex items-center justify-between gap-4">
+                {study.subjects ? (
+                  <span className="font-mono text-[11px] text-text-light">
+                    n = {study.subjects.toLocaleString()} subjects
+                  </span>
+                ) : (
+                  <span />
+                )}
+                <div className="flex items-center gap-3 shrink-0">
+                  {hasSecondaryLink && (
+                    <a
+                      href={study.pubmedUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-[11px] font-mono font-medium text-text-muted hover:text-accent-blue transition-colors"
+                    >
+                      PubMed
+                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  )}
+                  <a
+                    href={primaryUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[12px] font-medium bg-accent-blue/10 text-accent-blue hover:bg-accent-blue/20 transition-colors"
+                  >
+                    View Study
+                    <span className="font-mono text-[10px] opacity-70">({primaryLabel})</span>
+                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                </div>
               </div>
             </div>
-            {study.subjects && (
-              <div className="mt-3 pt-3 border-t border-border-light">
-                <span className="font-mono text-[11px] text-text-light">
-                  n = {study.subjects.toLocaleString()} subjects
-                </span>
-              </div>
-            )}
-          </a>
-        ))}
+          )
+        })}
 
         {filteredStudies.length === 0 && (
           <div className="text-center py-16">
