@@ -13,7 +13,10 @@
       "Bash(git -C /Users/andrewbolis/vagus-research diff --cached --stat)",
       "Bash(git -C:*)",
       "Bash(gh repo create:*)",
-      "Bash(brew install:*)"
+      "Bash(brew install:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push)"
     ]
   }
 }

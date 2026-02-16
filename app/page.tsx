@@ -56,12 +56,12 @@ export default function HomePage() {
             </p>
           </FadeIn>
           <FadeIn delay={100}>
-            <h1 className="font-display text-[40px] md:text-[56px] lg:text-[64px] font-light tracking-[-0.02em] text-text-primary leading-[1.1] max-w-4xl mx-auto mb-6">
+            <h1 className="font-display text-[40px] md:text-[56px] lg:text-[64px] font-light tracking-[-0.02em] text-bg-dark leading-[1.1] max-w-4xl mx-auto mb-6">
               The Science of Vagus Nerve Stimulation
             </h1>
           </FadeIn>
           <FadeIn delay={200}>
-            <p className="text-lg md:text-xl text-text-muted max-w-2xl mx-auto leading-relaxed mb-10">
+            <p className="text-lg md:text-xl text-text-body max-w-2xl mx-auto leading-relaxed mb-10">
               A curated collection of peer-reviewed research, clinical evidence, and educational
               resources on vagus nerve stimulation.
             </p>
@@ -70,13 +70,13 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/library"
-                className="inline-flex items-center justify-center px-6 py-3 bg-text-primary text-white text-sm font-medium rounded-lg hover:bg-text-primary/90 transition-colors"
+                className="inline-flex items-center justify-center px-6 py-3 bg-bg-dark text-white text-sm font-medium rounded-lg hover:bg-bg-dark/90 transition-colors"
               >
                 Explore the Library
               </Link>
               <Link
                 href="/evidence"
-                className="inline-flex items-center justify-center px-6 py-3 bg-white text-text-primary text-sm font-medium rounded-lg border border-border hover:border-text-light transition-colors"
+                className="inline-flex items-center justify-center px-6 py-3 bg-white text-bg-dark text-sm font-medium rounded-lg border border-border hover:border-text-muted transition-colors"
               >
                 Evidence Database
               </Link>

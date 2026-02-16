@@ -21,6 +21,9 @@ export default function FadeIn({
     const el = ref.current
     if (!el) return
 
+    // Mark that JS is ready — CSS will now hide the element for animation
+    el.setAttribute('data-fade-ready', '')
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -28,7 +31,7 @@ export default function FadeIn({
           observer.unobserve(el)
         }
       },
-      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+      { threshold: 0.05, rootMargin: '0px 0px -20px 0px' }
     )
 
     observer.observe(el)

@@ -86,13 +86,13 @@ export default function VideosPage() {
 
       <FadeIn>
         <div className="mb-12">
-          <p className="font-mono text-[11px] tracking-[0.1em] uppercase text-text-light mb-2">
+          <p className="font-mono text-[11px] tracking-[0.1em] uppercase text-accent-teal mb-2">
             Watch & Learn
           </p>
-          <h1 className="font-display text-4xl md:text-[44px] text-text-primary mb-4">
+          <h1 className="font-display text-4xl md:text-[44px] mb-4" style={{ color: '#0A1628' }}>
             Videos
           </h1>
-          <p className="text-text-muted max-w-2xl">
+          <p className="max-w-2xl" style={{ color: '#374151' }}>
             Educational video content covering vagus nerve stimulation science, mechanisms of
             action, research summaries, and clinical applications.
           </p>
@@ -106,8 +106,8 @@ export default function VideosPage() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
           </svg>
           <div>
-            <p className="text-sm font-medium text-text-primary mb-1">Video content coming soon</p>
-            <p className="text-sm text-text-body">
+            <p className="text-sm font-medium mb-1" style={{ color: '#0A1628' }}>Video content coming soon</p>
+            <p className="text-sm" style={{ color: '#374151' }}>
               We are producing original research explainers and educational videos.
               Subscribe to be notified when new videos are published.
             </p>
@@ -115,8 +115,8 @@ export default function VideosPage() {
         </div>
       </FadeIn>
 
-      {/* Video Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      {/* Video Grid — 1 col mobile, 2 col tablet, 3 col desktop */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {videos.map((video, i) => (
           <FadeIn key={video.title} delay={i * 60}>
             <VideoCard
