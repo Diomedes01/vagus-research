@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import EvidenceTable from '@/components/EvidenceTable'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import { generateMetadata as genMeta, generateDatasetJsonLd } from '@/lib/seo'
 import evidenceData from '@/content/evidence.json'
 import { Study } from '@/lib/evidence'
@@ -27,6 +28,12 @@ export default function EvidencePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <Breadcrumbs
+        items={[
+          { label: 'Home', href: '/' },
+          { label: 'Evidence Database' },
+        ]}
       />
       <div className="mb-12">
         <p className="font-mono text-[11px] tracking-[0.1em] uppercase text-text-light mb-2">

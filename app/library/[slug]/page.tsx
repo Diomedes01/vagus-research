@@ -1,11 +1,13 @@
 import { notFound } from 'next/navigation'
-import Link from 'next/link'
 import { getAllArticles, getArticleBySlug } from '@/lib/articles'
 import { generateMetadata as genMeta, generateArticleJsonLd } from '@/lib/seo'
 import ArticleCard from '@/components/ArticleCard'
 import TableOfContents from '@/components/TableOfContents'
 import NewsletterForm from '@/components/NewsletterForm'
 import TopicTag from '@/components/TopicTag'
+import ReadingProgress from '@/components/ReadingProgress'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import ShareButtons from '@/components/ShareButtons'
 import type { Metadata } from 'next'
 
 interface PageProps {
@@ -23,11 +25,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const article = getArticleBySlug(params.slug)
   if (!article) return {}
 
+  const ogImage = `/api/og?title=${encodeURIComponent(article.frontmatter.title)}&topic=${encodeURIComponent(article.frontmatter.topic)}`
+
   return genMeta({
     title: article.frontmatter.title,
     description: article.frontmatter.excerpt,
     path: `/library/${params.slug}`,
-    image: article.frontmatter.image,
+    image: article.frontmatter.image || ogImage,
     type: 'article',
   })
 }
@@ -68,14 +72,21 @@ export default function ArticlePage({ params }: PageProps) {
   if (!article) notFound()
 
   const allArticles = getAllArticles()
-  const related = allArticles
-    .filter((a) => a.slug !== params.slug)
-    .slice(0, 3)
+  // Prefer same-topic articles, fill with others if needed
+  const sameTopic = allArticles.filter(
+    (a) => a.slug !== params.slug && a.frontmatter.topic === article.frontmatter.topic
+  )
+  const others = allArticles.filter(
+    (a) => a.slug !== params.slug && a.frontmatter.topic !== article.frontmatter.topic
+  )
+  const related = [...sameTopic, ...others].slice(0, 3)
 
   const { frontmatter, content } = article
 
   return (
     <>
+      <ReadingProgress />
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -92,12 +103,13 @@ export default function ArticlePage({ params }: PageProps) {
       />
 
       <article className="max-w-layout mx-auto px-6 py-12 md:py-16">
-        {/* Breadcrumb */}
-        <div className="mb-8">
-          <Link href="/library" className="text-sm text-text-muted hover:text-accent-blue transition-colors">
-            &larr; Back to Library
-          </Link>
-        </div>
+        <Breadcrumbs
+          items={[
+            { label: 'Home', href: '/' },
+            { label: 'Library', href: '/library' },
+            { label: frontmatter.title },
+          ]}
+        />
 
         <div className="flex gap-16">
           {/* Main content */}
@@ -111,16 +123,19 @@ export default function ArticlePage({ params }: PageProps) {
               <h1 className="font-display text-[32px] md:text-[40px] font-medium text-text-primary leading-[1.2] mb-4">
                 {frontmatter.title}
               </h1>
-              <div className="flex items-center gap-4 text-sm text-text-muted">
-                <span>{frontmatter.author}</span>
-                <span className="text-text-light">&middot;</span>
-                <time>
-                  {new Date(frontmatter.date).toLocaleDateString('en-AU', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric',
-                  })}
-                </time>
+              <div className="flex items-center justify-between gap-4 flex-wrap">
+                <div className="flex items-center gap-4 text-sm text-text-muted">
+                  <span>{frontmatter.author}</span>
+                  <span className="text-text-light">&middot;</span>
+                  <time>
+                    {new Date(frontmatter.date).toLocaleDateString('en-AU', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                    })}
+                  </time>
+                </div>
+                <ShareButtons title={frontmatter.title} slug={params.slug} />
               </div>
             </header>
 

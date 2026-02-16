@@ -10,6 +10,7 @@ import {
   getStimulationTypes,
   getYearRange,
 } from '@/lib/evidence'
+import CopyCitation from './CopyCitation'
 
 interface EvidenceTableProps {
   studies: Study[]
@@ -373,6 +374,14 @@ export default function EvidenceTable({ studies }: EvidenceTableProps) {
                   <span />
                 )}
                 <div className="flex items-center gap-3 shrink-0">
+                  <CopyCitation
+                    authors={study.authors}
+                    title={study.title}
+                    journal={study.journal}
+                    year={study.year}
+                    doi={study.doi}
+                    pubmedUrl={study.pubmedUrl}
+                  />
                   {hasSecondaryLink && (
                     <a
                       href={study.pubmedUrl}

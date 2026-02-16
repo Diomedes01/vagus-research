@@ -142,3 +142,55 @@ main {
     transition: none;
   }
 }
+
+/* Print styles */
+@media print {
+  nav,
+  footer,
+  aside,
+  .back-to-top,
+  [aria-label="Back to top"],
+  [aria-label="Breadcrumb"] {
+    display: none !important;
+  }
+
+  main {
+    animation: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+    font-size: 12pt;
+    line-height: 1.6;
+  }
+
+  .prose {
+    max-width: 100% !important;
+  }
+
+  .prose a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+
+  .prose a[href^="#"]::after,
+  .prose a[href^="javascript:"]::after {
+    content: none;
+  }
+
+  h2, h3 {
+    page-break-after: avoid;
+  }
+
+  .key-finding {
+    border-left: 2pt solid #00B8A9;
+    background: #f5f5f5;
+  }
+
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+}

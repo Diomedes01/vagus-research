@@ -33,6 +33,17 @@ export default function Nav() {
               {link.label}
             </Link>
           ))}
+          <button
+            onClick={() => {
+              window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', metaKey: true }))
+            }}
+            className="flex items-center gap-2 px-3 py-1.5 text-xs text-text-light border border-border rounded-lg hover:border-text-muted transition-colors"
+          >
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            <kbd className="font-mono text-[10px]">⌘K</kbd>
+          </button>
           <Link
             href="/#newsletter"
             className="text-sm font-medium px-4 py-2 bg-accent-teal text-white rounded-lg hover:bg-accent-teal/90 transition-colors"

@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { Newsreader, Inter, JetBrains_Mono } from 'next/font/google'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import BackToTop from '@/components/BackToTop'
+import GlobalSearch from '@/components/GlobalSearch'
 import '@/styles/globals.css'
 
 const newsreader = Newsreader({
@@ -65,10 +67,18 @@ export default function RootLayout({
       lang="en-AU"
       className={`${newsreader.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
+      <head>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="alternate" type="application/rss+xml" title="Vagus Research" href="/feed.xml" />
+        <meta name="theme-color" content="#0A1628" />
+      </head>
       <body className="font-body text-text-body bg-bg-primary antialiased">
         <Nav />
         <main className="min-h-screen">{children}</main>
         <Footer />
+        <BackToTop />
+        <GlobalSearch />
       </body>
     </html>
   )
