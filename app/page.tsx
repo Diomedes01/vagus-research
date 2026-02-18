@@ -185,7 +185,7 @@ export default function HomePage() {
           <circle cx="330" cy="540" r="2" fill="#0A1628" />
         </svg>
 
-        <div className="max-w-layout mx-auto px-6 py-24 md:py-32 lg:py-40 text-center relative z-10">
+        <div className="max-w-layout mx-auto px-6 py-16 md:py-20 lg:py-28 text-center relative z-10">
           <FadeIn>
             <p className="font-mono text-[11px] tracking-[0.15em] uppercase text-accent-teal mb-6">
               Evidence-Based Research Platform

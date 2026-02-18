@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import TopicTag from './TopicTag'
 
@@ -180,7 +182,12 @@ export default function ArticleCard({
 
   return (
     <Link href={`/library/${slug}`} className="group block">
-      <article className="bg-white border border-border rounded-xl overflow-hidden h-full transition-all duration-200 hover:shadow-lg hover:shadow-black/5 hover:-translate-y-0.5">
+      <article
+        className="bg-white border border-border rounded-xl overflow-hidden h-full transition-all duration-200 hover:shadow-lg hover:shadow-black/5 hover:-translate-y-0.5"
+        style={{ borderLeft: `4px solid ${from}` }}
+        onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = `${from}08`)}
+        onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '')}
+      >
         {/* Gradient header band */}
         <div
           className="relative h-2.5"

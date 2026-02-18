@@ -17,11 +17,13 @@ export const metadata: Metadata = genMeta({
   path: '/videos',
 })
 
+// Add youtubeId once videos are uploaded (e.g. youtubeId: 'dQw4w9WgXcQ')
 const videos = [
   {
     title: 'How Vagus Nerve Stimulation Works',
     topic: 'Foundation',
     duration: '8:45',
+    youtubeId: '',
     description:
       'A clear explanation of how electrical stimulation of the vagus nerve modulates neural circuits, autonomic balance, and inflammatory pathways.',
   },
@@ -29,6 +31,7 @@ const videos = [
     title: 'The Cholinergic Anti-Inflammatory Pathway',
     topic: 'Inflammation',
     duration: '7:20',
+    youtubeId: '',
     description:
       'How the vagus nerve regulates systemic inflammation through acetylcholine signalling and the spleen — the basis of bioelectronic medicine.',
   },
@@ -36,6 +39,7 @@ const videos = [
     title: 'taVNS vs Implanted VNS',
     topic: 'Foundation',
     duration: '6:10',
+    youtubeId: '',
     description:
       'Comparing transcutaneous auricular stimulation with surgically implanted devices — mechanisms, evidence, safety profiles, and clinical applications.',
   },
@@ -43,6 +47,7 @@ const videos = [
     title: 'Vagus Nerve and Sleep',
     topic: 'Sleep',
     duration: '9:15',
+    youtubeId: '',
     description:
       'Exploring the relationship between vagal tone, parasympathetic activity, and sleep architecture — what the research shows about VNS and sleep quality.',
   },
@@ -50,6 +55,7 @@ const videos = [
     title: 'Understanding the Auricular Branch',
     topic: 'Foundation',
     duration: '5:30',
+    youtubeId: '',
     description:
       'The anatomy of the auricular branch of the vagus nerve (ABVN) — why the ear is a gateway to non-invasive vagus nerve stimulation.',
   },
@@ -57,6 +63,7 @@ const videos = [
     title: 'VNS for Anxiety and Stress',
     topic: 'Anxiety',
     duration: '10:00',
+    youtubeId: '',
     description:
       'Reviewing the clinical evidence for vagus nerve stimulation in anxiety disorders — from autonomic regulation to amygdala modulation.',
   },
@@ -64,6 +71,7 @@ const videos = [
     title: 'The Safety Profile of taVNS',
     topic: 'Safety',
     duration: '6:45',
+    youtubeId: '',
     description:
       'What 177 studies and 6,322 subjects tell us about the safety and tolerability of transcutaneous auricular vagus nerve stimulation.',
   },
@@ -71,6 +79,7 @@ const videos = [
     title: 'Future of Neuromodulation',
     topic: 'Foundation',
     duration: '11:30',
+    youtubeId: '',
     description:
       'Where the field is heading — personalised stimulation protocols, closed-loop systems, biomarker-guided dosing, and combination therapies.',
   },
@@ -112,6 +121,7 @@ export default function VideosPage() {
               duration={video.duration}
               description={video.description}
               episodeNumber={i + 1}
+              youtubeId={video.youtubeId || undefined}
             />
           </FadeIn>
         ))}
