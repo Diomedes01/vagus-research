@@ -21,8 +21,9 @@ export async function POST(request: NextRequest) {
       { message: result.message },
       { status: 200 }
     )
-  } catch (err) {
-    console.error('[subscribe]', err)
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : 'Unknown error'
+    console.error('[subscribe]', message)
     return NextResponse.json(
       { error: 'Something went wrong. Please try again.' },
       { status: 500 }

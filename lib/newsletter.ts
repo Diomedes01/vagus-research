@@ -60,17 +60,48 @@ const convertKitProvider: NewsletterProvider = {
 
 // ─── Mailchimp ──────────────────────────────────────────────────────────────
 
+function getMailchimpConfig() {
+  const apiKey = process.env.MAILCHIMP_API_KEY
+  const listId = process.env.MAILCHIMP_LIST_ID
+  const server = process.env.MAILCHIMP_SERVER
+
+  if (!apiKey || !listId || !server) {
+    throw new Error(
+      'MAILCHIMP_API_KEY, MAILCHIMP_LIST_ID, and MAILCHIMP_SERVER must be set'
+    )
+  }
+
+  return { apiKey, listId, server }
+}
+
+async function addMailchimpTags(email: string) {
+  const { apiKey, listId, server } = getMailchimpConfig()
+
+  // Mailchimp uses MD5 hash of lowercase email as subscriber ID
+  const { createHash } = await import('crypto')
+  const subscriberHash = createHash('md5').update(email.toLowerCase()).digest('hex')
+
+  await fetch(
+    `https://${server}.api.mailchimp.com/3.0/lists/${listId}/members/${subscriberHash}/tags`,
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `apikey ${apiKey}`,
+      },
+      body: JSON.stringify({
+        tags: [
+          { name: 'website-subscriber', status: 'active' },
+          { name: 'vagus-research', status: 'active' },
+        ],
+      }),
+    }
+  )
+}
+
 const mailchimpProvider: NewsletterProvider = {
   async subscribe(email: string) {
-    const apiKey = process.env.MAILCHIMP_API_KEY
-    const listId = process.env.MAILCHIMP_LIST_ID
-    const server = process.env.MAILCHIMP_SERVER // e.g. "us1"
-
-    if (!apiKey || !listId || !server) {
-      throw new Error(
-        'MAILCHIMP_API_KEY, MAILCHIMP_LIST_ID, and MAILCHIMP_SERVER must be set'
-      )
-    }
+    const { apiKey, listId, server } = getMailchimpConfig()
 
     const res = await fetch(
       `https://${server}.api.mailchimp.com/3.0/lists/${listId}/members`,
@@ -83,6 +114,7 @@ const mailchimpProvider: NewsletterProvider = {
         body: JSON.stringify({
           email_address: email,
           status: 'subscribed',
+          tags: ['website-subscriber', 'vagus-research'],
         }),
       }
     )
@@ -90,9 +122,11 @@ const mailchimpProvider: NewsletterProvider = {
     if (!res.ok) {
       const data = await res.json().catch(() => ({}))
       if (data.title === 'Member Exists') {
-        return { success: true, message: 'You are already subscribed.' }
+        // Ensure tags are applied to existing members too
+        await addMailchimpTags(email).catch(() => {})
+        return { success: true, message: 'You\u2019re already subscribed!' }
       }
-      throw new Error(data.detail || 'Mailchimp subscription failed')
+      throw new Error(data.detail || 'Subscription failed')
     }
 
     return {
@@ -103,10 +137,9 @@ const mailchimpProvider: NewsletterProvider = {
 }
 
 // ─── Active provider ────────────────────────────────────────────────────────
-// Change this to `convertKitProvider` or `mailchimpProvider` when ready.
 
-export const newsletter: NewsletterProvider = consoleProvider
+export const newsletter: NewsletterProvider = mailchimpProvider
 
 // Suppress unused-variable warnings — these are ready to swap in.
+void consoleProvider
 void convertKitProvider
-void mailchimpProvider

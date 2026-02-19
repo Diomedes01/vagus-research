@@ -20,13 +20,15 @@ export default function NewsletterForm() {
         body: JSON.stringify({ email }),
       })
 
+      const data = await res.json().catch(() => ({}))
+
       if (res.ok) {
         setStatus('success')
-        setMessage('Thank you. You\u2019ll receive our latest research summaries.')
+        setMessage(data.message || 'Thank you. You\u2019ll receive our latest research summaries.')
         setEmail('')
       } else {
         setStatus('error')
-        setMessage('Something went wrong. Please try again.')
+        setMessage(data.error || 'Something went wrong. Please try again.')
       }
     } catch {
       setStatus('error')
