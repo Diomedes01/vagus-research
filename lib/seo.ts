@@ -5,7 +5,7 @@ const siteConfig = {
   description: 'The Science of Vagus Nerve Stimulation — an academic research platform dedicated to evidence-based VNS science.',
   url: 'https://vagusresearch.com.au',
   ogImage: '/images/og/default.jpg',
-  creator: 'AZOROS PTY LTD',
+  creator: 'Vagus Research',
 }
 
 export function generateMetadata({
@@ -201,7 +201,7 @@ export function generateAboutPageJsonLd() {
         addressRegion: 'Victoria',
         addressCountry: 'AU',
       },
-      parentOrganization: {
+      founder: {
         '@type': 'Organization',
         name: siteConfig.creator,
       },

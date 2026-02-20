@@ -7,7 +7,7 @@ const jsonLd = generateAboutPageJsonLd()
 export const metadata: Metadata = genMeta({
   title: 'About',
   description:
-    'Vagus Research is an academic platform by AZOROS PTY LTD, dedicated to curating and communicating the science of vagus nerve stimulation.',
+    'Vagus Research is an academic platform dedicated to curating and communicating the science of vagus nerve stimulation.',
   path: '/about',
 })
 
@@ -61,12 +61,11 @@ export default function AboutPage() {
               research platform that takes the science seriously.
             </p>
 
-            <h2 className="font-display text-2xl text-text-primary mt-12 mb-4">About AZOROS</h2>
+            <h2 className="font-display text-2xl text-text-primary mt-12 mb-4">About Us</h2>
             <p>
-              Vagus Research is a project of <strong>AZOROS PTY LTD</strong>, based in
-              Melbourne, Australia. AZOROS is dedicated to advancing the field of
-              neuromodulation through education, research communication, and the development
-              of accessible transcutaneous vagus nerve stimulation (taVNS) technology.
+              Vagus Research is based in Melbourne, Australia. We are dedicated to advancing
+              the field of neuromodulation through education, research communication, and the
+              development of accessible transcutaneous vagus nerve stimulation (taVNS) technology.
             </p>
 
             <h2 className="font-display text-2xl text-text-primary mt-12 mb-4" id="contact">

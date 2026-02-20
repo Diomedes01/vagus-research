@@ -15,7 +15,7 @@ export default function Footer() {
               Curated evidence, peer-reviewed research, and educational resources.
             </p>
             <p className="mt-4 text-xs text-white/60">
-              A project by AZOROS PTY LTD, Melbourne, Australia
+              Melbourne, Australia
             </p>
           </div>
 
@@ -77,7 +77,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="mt-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <p className="text-xs text-white/50">
-            &copy; {new Date().getFullYear()} AZOROS PTY LTD. All rights reserved.
+            &copy; {new Date().getFullYear()} Vagus Research. All rights reserved.
           </p>
         </div>
       </div>
