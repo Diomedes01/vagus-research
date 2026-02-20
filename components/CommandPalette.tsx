@@ -121,7 +121,7 @@ export default function CommandPalette({ items }: CommandPaletteProps) {
   if (!open) return null
 
   return (
-    <div className="fixed inset-0 z-[100]" onClick={close}>
+    <div className="fixed inset-0 z-[100]" role="dialog" aria-modal="true" aria-label="Search" onClick={close}>
       {/* Backdrop */}
       <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
 
@@ -143,6 +143,7 @@ export default function CommandPalette({ items }: CommandPaletteProps) {
               onChange={(e) => setQuery(e.target.value)}
               onKeyDown={handleInputKeyDown}
               placeholder="Search articles, studies, videos..."
+              aria-label="Search articles, studies, videos"
               className="flex-1 py-3.5 text-sm text-text-body placeholder:text-text-light bg-transparent focus:outline-none"
             />
             <kbd className="hidden sm:inline-flex items-center px-1.5 py-0.5 text-[10px] font-mono text-text-light border border-border-light rounded">

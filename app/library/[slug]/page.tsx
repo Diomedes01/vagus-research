@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: article.frontmatter.title,
     description: article.frontmatter.excerpt,
     path: `/library/${params.slug}`,
-    image: article.frontmatter.image || ogImage,
+    image: ogImage,
     type: 'article',
   })
 }
@@ -127,7 +127,7 @@ export default function ArticlePage({ params }: PageProps) {
                 <div className="flex items-center gap-4 text-sm text-text-muted">
                   <span>{frontmatter.author}</span>
                   <span className="text-text-light">&middot;</span>
-                  <time>
+                  <time dateTime={frontmatter.date}>
                     {new Date(frontmatter.date).toLocaleDateString('en-AU', {
                       year: 'numeric',
                       month: 'long',

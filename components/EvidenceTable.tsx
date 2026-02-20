@@ -135,6 +135,7 @@ export default function EvidenceTable({ studies }: EvidenceTableProps) {
               if (e.target.value.trim().length >= 2) setSortBy('relevance')
             }}
             placeholder="Search studies — try &quot;depression&quot;, &quot;taVNS anxiety&quot;, or &quot;anti-inflammatory&quot;..."
+            aria-label="Search studies"
             className="w-full pl-10 pr-4 py-3 bg-bg-primary border border-border rounded-lg text-sm text-text-body placeholder:text-text-light focus:outline-none focus:ring-2 focus:ring-accent-teal/20 focus:border-accent-teal transition-colors"
           />
           {searchQuery && (
@@ -143,6 +144,7 @@ export default function EvidenceTable({ studies }: EvidenceTableProps) {
                 setSearchQuery('')
                 setSortBy('year-desc')
               }}
+              aria-label="Clear search"
               className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-text-light hover:text-text-muted"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -158,10 +160,11 @@ export default function EvidenceTable({ studies }: EvidenceTableProps) {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {/* Condition */}
           <div>
-            <label className="block font-mono text-[10px] tracking-[0.1em] uppercase text-text-light mb-1.5">
+            <label htmlFor="filter-condition" className="block font-mono text-[10px] tracking-[0.1em] uppercase text-text-light mb-1.5">
               Condition
             </label>
             <select
+              id="filter-condition"
               value={condition}
               onChange={(e) => setCondition(e.target.value)}
               className="w-full px-3 py-2 bg-bg-primary border border-border rounded-lg text-sm text-text-body focus:outline-none focus:ring-2 focus:ring-accent-teal/20 focus:border-accent-teal transition-colors"
@@ -175,10 +178,11 @@ export default function EvidenceTable({ studies }: EvidenceTableProps) {
 
           {/* Study Type */}
           <div>
-            <label className="block font-mono text-[10px] tracking-[0.1em] uppercase text-text-light mb-1.5">
+            <label htmlFor="filter-study-type" className="block font-mono text-[10px] tracking-[0.1em] uppercase text-text-light mb-1.5">
               Study Type
             </label>
             <select
+              id="filter-study-type"
               value={studyType}
               onChange={(e) => setStudyType(e.target.value)}
               className="w-full px-3 py-2 bg-bg-primary border border-border rounded-lg text-sm text-text-body focus:outline-none focus:ring-2 focus:ring-accent-teal/20 focus:border-accent-teal transition-colors"
@@ -192,10 +196,11 @@ export default function EvidenceTable({ studies }: EvidenceTableProps) {
 
           {/* Stimulation Type */}
           <div>
-            <label className="block font-mono text-[10px] tracking-[0.1em] uppercase text-text-light mb-1.5">
+            <label htmlFor="filter-stimulation" className="block font-mono text-[10px] tracking-[0.1em] uppercase text-text-light mb-1.5">
               Stimulation
             </label>
             <select
+              id="filter-stimulation"
               value={stimulationType}
               onChange={(e) => setStimulationType(e.target.value)}
               className="w-full px-3 py-2 bg-bg-primary border border-border rounded-lg text-sm text-text-body focus:outline-none focus:ring-2 focus:ring-accent-teal/20 focus:border-accent-teal transition-colors"
@@ -209,10 +214,11 @@ export default function EvidenceTable({ studies }: EvidenceTableProps) {
 
           {/* Sort */}
           <div>
-            <label className="block font-mono text-[10px] tracking-[0.1em] uppercase text-text-light mb-1.5">
+            <label htmlFor="filter-sort" className="block font-mono text-[10px] tracking-[0.1em] uppercase text-text-light mb-1.5">
               Sort By
             </label>
             <select
+              id="filter-sort"
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as typeof sortBy)}
               className="w-full px-3 py-2 bg-bg-primary border border-border rounded-lg text-sm text-text-body focus:outline-none focus:ring-2 focus:ring-accent-teal/20 focus:border-accent-teal transition-colors"
@@ -242,6 +248,7 @@ export default function EvidenceTable({ studies }: EvidenceTableProps) {
                 }}
                 min={yearRange.min}
                 max={yearMax}
+                aria-label="Year range start"
                 className="w-20 px-2 py-1.5 bg-bg-primary border border-border rounded-lg text-sm text-text-body font-mono text-center focus:outline-none focus:ring-2 focus:ring-accent-teal/20 focus:border-accent-teal"
               />
               <div className="flex-1 relative px-1">
@@ -263,6 +270,7 @@ export default function EvidenceTable({ studies }: EvidenceTableProps) {
                 }}
                 min={yearMin}
                 max={yearRange.max}
+                aria-label="Year range end"
                 className="w-20 px-2 py-1.5 bg-bg-primary border border-border rounded-lg text-sm text-text-body font-mono text-center focus:outline-none focus:ring-2 focus:ring-accent-teal/20 focus:border-accent-teal"
               />
             </div>
@@ -285,6 +293,7 @@ export default function EvidenceTable({ studies }: EvidenceTableProps) {
               {condition && (
                 <button
                   onClick={() => setCondition('')}
+                  aria-label={`Remove ${condition} filter`}
                   className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-medium bg-blue-50 text-blue-700 border border-blue-200 hover:bg-blue-100 transition-colors"
                 >
                   {condition}
@@ -296,6 +305,7 @@ export default function EvidenceTable({ studies }: EvidenceTableProps) {
               {studyType && (
                 <button
                   onClick={() => setStudyType('')}
+                  aria-label={`Remove ${studyType} filter`}
                   className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-medium bg-accent-teal-light text-accent-teal border border-accent-teal/20 hover:bg-accent-teal/10 transition-colors"
                 >
                   {studyType}
@@ -307,6 +317,7 @@ export default function EvidenceTable({ studies }: EvidenceTableProps) {
               {stimulationType && (
                 <button
                   onClick={() => setStimulationType('')}
+                  aria-label={`Remove ${stimulationType} filter`}
                   className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-medium bg-gray-50 text-gray-600 border border-gray-200 hover:bg-gray-100 transition-colors"
                 >
                   {stimulationType}

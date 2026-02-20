@@ -18,7 +18,7 @@ export default function StatsBar() {
                 <div className="font-mono text-3xl md:text-4xl font-medium text-accent-teal mb-2">
                   {stat.value}
                 </div>
-                <div className="font-mono text-[11px] tracking-[0.1em] uppercase text-white/50">
+                <div className="font-mono text-[11px] tracking-[0.1em] uppercase text-white/70">
                   {stat.label}
                 </div>
               </div>

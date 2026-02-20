@@ -60,6 +60,7 @@ export default function NewsletterForm() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="your@email.com"
                 required
+                aria-label="Email address"
                 className="flex-1 px-4 py-3 bg-white border border-border rounded-lg text-sm text-text-body placeholder:text-text-light focus:outline-none focus:ring-2 focus:ring-accent-teal/20 focus:border-accent-teal transition-colors"
               />
               <button
@@ -73,7 +74,7 @@ export default function NewsletterForm() {
           )}
 
           {status === 'error' && (
-            <p className="mt-3 text-sm text-red-500">{message}</p>
+            <p className="mt-3 text-sm text-red-500" role="alert">{message}</p>
           )}
 
           <p className="mt-4 text-xs text-text-light">

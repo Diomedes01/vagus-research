@@ -37,6 +37,7 @@ export default function Nav() {
             onClick={() => {
               window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', metaKey: true }))
             }}
+            aria-label="Search (Cmd+K)"
             className="flex items-center gap-2 px-3 py-1.5 text-xs text-text-light border border-border rounded-lg hover:border-text-muted transition-colors"
           >
             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -54,7 +55,7 @@ export default function Nav() {
 
         {/* Mobile menu button */}
         <button
-          className="md:hidden p-2 text-text-muted"
+          className="md:hidden p-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-text-muted"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
@@ -72,12 +73,12 @@ export default function Nav() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-border bg-white px-6 py-4 space-y-3">
+        <div className="md:hidden border-t border-border bg-white px-6 py-4 space-y-1">
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="block text-sm font-medium text-text-muted hover:text-text-primary transition-colors"
+              className="block text-sm font-medium text-text-muted hover:text-text-primary transition-colors py-3"
               onClick={() => setMobileOpen(false)}
             >
               {link.label}
@@ -85,7 +86,7 @@ export default function Nav() {
           ))}
           <Link
             href="/#newsletter"
-            className="block text-sm font-medium text-accent-teal"
+            className="block text-sm font-medium text-accent-teal py-3"
             onClick={() => setMobileOpen(false)}
           >
             Subscribe

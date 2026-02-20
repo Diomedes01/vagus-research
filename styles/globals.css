@@ -131,6 +131,9 @@ main {
 
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
   main {
     animation: none;
   }

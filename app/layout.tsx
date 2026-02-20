@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Newsreader, Inter, JetBrains_Mono } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/react'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import BackToTop from '@/components/BackToTop'
@@ -79,6 +80,7 @@ export default function RootLayout({
         <Footer />
         <BackToTop />
         <GlobalSearch />
+        <Analytics />
       </body>
     </html>
   )
