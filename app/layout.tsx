@@ -36,12 +36,12 @@ export const metadata: Metadata = {
   },
   description:
     'An academic research platform dedicated to the science of vagus nerve stimulation. Curated evidence, peer-reviewed research, and educational resources.',
-  metadataBase: new URL('https://vagusresearch.com.au'),
+  metadataBase: new URL('https://vagusresearch.com'),
   openGraph: {
     title: 'Vagus Research — The Science of Vagus Nerve Stimulation',
     description:
       'An academic research platform dedicated to the science of vagus nerve stimulation.',
-    url: 'https://vagusresearch.com.au',
+    url: 'https://vagusresearch.com',
     siteName: 'Vagus Research',
     locale: 'en_AU',
     type: 'website',

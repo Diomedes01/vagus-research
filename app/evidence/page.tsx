@@ -19,7 +19,7 @@ export default function EvidencePage() {
     name: 'Vagus Nerve Stimulation Evidence Database',
     description:
       'A curated collection of peer-reviewed research on vagus nerve stimulation, including RCTs, meta-analyses, and systematic reviews.',
-    url: 'https://vagusresearch.com.au/evidence',
+    url: 'https://vagusresearch.com/evidence',
     size: studies.length,
   })
 

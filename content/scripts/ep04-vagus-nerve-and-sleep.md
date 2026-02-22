@@ -137,9 +137,9 @@ Clinical evidence, including a randomised controlled trial by Jiao and colleague
 
 What is clear is that the relationship between vagal function and sleep represents one of the more promising frontiers in VNS research — and one we'll continue to follow as new evidence emerges.
 
-[VISUAL CUE: End card — "Explore the Full Evidence Database at vagusresearch.com.au" — Subscribe prompt and Vagus Research logo.]
+[VISUAL CUE: End card — "Explore the Full Evidence Database at vagusresearch.com" — Subscribe prompt and Vagus Research logo.]
 
-Thank you for watching. For research summaries, the evidence database, and more episodes in this series, visit vagusresearch.com.au.
+Thank you for watching. For research summaries, the evidence database, and more episodes in this series, visit vagusresearch.com.
 
 ---
 

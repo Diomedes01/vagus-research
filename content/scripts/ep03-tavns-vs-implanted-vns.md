@@ -119,9 +119,9 @@ The field is moving toward greater personalisation — matching the right stimul
 
 In our next episode, we'll explore one specific clinical application in depth — the relationship between the vagus nerve and sleep.
 
-[VISUAL CUE: End card — "Next Episode: Vagus Nerve and Sleep" — Subscribe prompt and vagusresearch.com.au URL.]
+[VISUAL CUE: End card — "Next Episode: Vagus Nerve and Sleep" — Subscribe prompt and vagusresearch.com URL.]
 
-Thank you for watching. For the full evidence database and detailed research summaries, visit vagusresearch.com.au.
+Thank you for watching. For the full evidence database and detailed research summaries, visit vagusresearch.com.
 
 ---
 

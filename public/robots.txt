@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://vagusresearch.com.au
+Host: https://vagusresearch.com
 
 # Sitemaps
-Sitemap: https://vagusresearch.com.au/sitemap.xml
+Sitemap: https://vagusresearch.com/sitemap.xml

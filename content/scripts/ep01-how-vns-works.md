@@ -125,9 +125,9 @@ It's a remarkably elegant system — one that evolution spent millions of years 
 
 In our next episode, we'll take a deep dive into the cholinergic anti-inflammatory pathway — the discovery that opened the door to bioelectronic medicine.
 
-[VISUAL CUE: End card — "Next Episode: The Cholinergic Anti-Inflammatory Pathway" — Subscribe prompt and vagusresearch.com.au URL.]
+[VISUAL CUE: End card — "Next Episode: The Cholinergic Anti-Inflammatory Pathway" — Subscribe prompt and vagusresearch.com URL.]
 
-Thank you for watching. For more research summaries and the full evidence database, visit vagusresearch.com.au.
+Thank you for watching. For more research summaries and the full evidence database, visit vagusresearch.com.
 
 ---
 

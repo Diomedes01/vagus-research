@@ -167,9 +167,9 @@ These are not distant fantasies. They are active areas of research, with papers 
 
 The future of neuromodulation is precision. The right stimulation, for the right person, at the right time. And the vagus nerve — with its unparalleled reach across the body and its accessible auricular branch — is at the centre of that future.
 
-[VISUAL CUE: End card — "vagusresearch.com.au" with tagline "The Science of Vagus Nerve Stimulation."]
+[VISUAL CUE: End card — "vagusresearch.com" with tagline "The Science of Vagus Nerve Stimulation."]
 
-Stay informed on the latest developments at vagusresearch.com.au.
+Stay informed on the latest developments at vagusresearch.com.
 
 ---
 

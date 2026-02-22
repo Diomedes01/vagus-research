@@ -2,7 +2,7 @@ import { getAllArticles } from '@/lib/articles'
 
 export async function GET() {
   const articles = getAllArticles()
-  const siteUrl = 'https://vagusresearch.com.au'
+  const siteUrl = 'https://vagusresearch.com'
 
   const itemsXml = articles
     .map(

@@ -7,7 +7,7 @@ const jsonLd = generateVideoPageJsonLd({
   name: 'Vagus Nerve Stimulation Videos',
   description:
     'Educational video content covering vagus nerve stimulation science, mechanisms of action, research summaries, and clinical applications.',
-  url: 'https://vagusresearch.com.au/videos',
+  url: 'https://vagusresearch.com/videos',
 })
 
 export const metadata: Metadata = genMeta({

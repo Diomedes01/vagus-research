@@ -9,7 +9,7 @@ interface ShareButtonsProps {
 
 export default function ShareButtons({ title, slug }: ShareButtonsProps) {
   const [copied, setCopied] = useState(false)
-  const url = `https://vagusresearch.com.au/library/${slug}`
+  const url = `https://vagusresearch.com/library/${slug}`
   const encodedTitle = encodeURIComponent(title)
   const encodedUrl = encodeURIComponent(url)
 

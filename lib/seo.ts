@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 const siteConfig = {
   name: 'Vagus Research',
   description: 'The Science of Vagus Nerve Stimulation — an academic research platform dedicated to evidence-based VNS science.',
-  url: 'https://vagusresearch.com.au',
+  url: 'https://vagusresearch.com',
   ogImage: '/images/og/default.jpg',
   creator: 'Vagus Research',
 }

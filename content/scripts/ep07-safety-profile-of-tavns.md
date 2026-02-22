@@ -137,9 +137,9 @@ The safety profile of transcutaneous auricular vagus nerve stimulation, as estab
 
 This does not mean taVNS is without any risk, and it does not eliminate the need for proper guidance, appropriate contraindication screening, and ongoing research into long-term safety. But it does mean that for the majority of individuals, taVNS represents a low-risk approach to neuromodulation — one supported by a substantial and growing evidence base.
 
-[VISUAL CUE: End card — "vagusresearch.com.au" with tagline "The Science of Vagus Nerve Stimulation."]
+[VISUAL CUE: End card — "vagusresearch.com" with tagline "The Science of Vagus Nerve Stimulation."]
 
-For the full safety data and study references, visit vagusresearch.com.au.
+For the full safety data and study references, visit vagusresearch.com.
 
 ---
 

@@ -101,9 +101,9 @@ The anatomical work of researchers like Peuker and Filler, combined with the neu
 
 Understanding this anatomy is essential for anyone seeking to evaluate vagus nerve stimulation research. It explains why electrode placement matters, why sham controls use the earlobe, and why taVNS has emerged as a credible tool for clinical neuroscience.
 
-[VISUAL CUE: End card — "vagusresearch.com.au" with tagline "The Science of Vagus Nerve Stimulation."]
+[VISUAL CUE: End card — "vagusresearch.com" with tagline "The Science of Vagus Nerve Stimulation."]
 
-For more on the research behind vagus nerve stimulation, visit vagusresearch.com.au.
+For more on the research behind vagus nerve stimulation, visit vagusresearch.com.
 
 ---
 

@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://vagusresearch.com.au',
+  siteUrl: 'https://vagusresearch.com',
   generateRobotsTxt: true,
   sitemapSize: 7000,
   changefreq: 'weekly',

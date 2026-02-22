@@ -137,9 +137,9 @@ But we are still in the early chapters of this research. Sample sizes need to gr
 
 What the research does suggest — carefully and with appropriate caveats — is that the vagus nerve represents a genuine target for anxiety intervention. Not a cure. Not a replacement for established treatments. But a biologically plausible, evidence-supported tool that may help restore the autonomic balance that anxiety disrupts.
 
-[VISUAL CUE: End card — "vagusresearch.com.au" with tagline "The Science of Vagus Nerve Stimulation."]
+[VISUAL CUE: End card — "vagusresearch.com" with tagline "The Science of Vagus Nerve Stimulation."]
 
-For the full evidence base and detailed study summaries, visit vagusresearch.com.au.
+For the full evidence base and detailed study summaries, visit vagusresearch.com.
 
 ---
 

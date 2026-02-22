@@ -135,9 +135,9 @@ Clinical evidence from trials in rheumatoid arthritis and Crohn's disease sugges
 
 In our next episode, we'll compare the different approaches to vagus nerve stimulation — implanted devices versus transcutaneous methods — and examine what the evidence tells us about each.
 
-[VISUAL CUE: End card — "Next Episode: taVNS vs Implanted VNS" — Subscribe prompt and vagusresearch.com.au URL.]
+[VISUAL CUE: End card — "Next Episode: taVNS vs Implanted VNS" — Subscribe prompt and vagusresearch.com URL.]
 
-Thank you for watching. Visit vagusresearch.com.au for the full evidence database and research summaries.
+Thank you for watching. Visit vagusresearch.com for the full evidence database and research summaries.
 
 ---
 

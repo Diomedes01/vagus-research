@@ -12,7 +12,7 @@ const jsonLd = generateCollectionPageJsonLd({
   name: 'Vagus Research Library',
   description:
     'A curated collection of evidence-based articles on vagus nerve stimulation science.',
-  url: 'https://vagusresearch.com.au/library',
+  url: 'https://vagusresearch.com/library',
 })
 
 export default function LibraryLayout({

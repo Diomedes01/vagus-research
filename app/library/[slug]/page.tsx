@@ -95,7 +95,7 @@ export default function ArticlePage({ params }: PageProps) {
               title: frontmatter.title,
               description: frontmatter.excerpt,
               datePublished: frontmatter.date,
-              url: `https://vagusresearch.com.au/library/${params.slug}`,
+              url: `https://vagusresearch.com/library/${params.slug}`,
               image: frontmatter.image,
             })
           ),

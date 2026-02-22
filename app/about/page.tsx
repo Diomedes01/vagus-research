@@ -77,8 +77,8 @@ export default function AboutPage() {
             </p>
             <p>
               <strong>Email:</strong>{' '}
-              <a href="mailto:hello@vagusresearch.com.au" className="text-accent-blue hover:underline">
-                hello@vagusresearch.com.au
+              <a href="mailto:hello@vagusresearch.com" className="text-accent-blue hover:underline">
+                hello@vagusresearch.com
               </a>
             </p>
             <p>

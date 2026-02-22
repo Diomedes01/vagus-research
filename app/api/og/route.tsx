@@ -77,7 +77,7 @@ export async function GET(request: NextRequest) {
               color: 'rgba(255,255,255,0.4)',
             }}
           >
-            vagusresearch.com.au
+            vagusresearch.com
           </div>
           <div
             style={{
