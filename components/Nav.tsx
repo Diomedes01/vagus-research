@@ -21,8 +21,8 @@ export default function Nav() {
           <Image
             src="/images/logo.svg"
             alt="Vagus Research"
-            width={180}
-            height={26}
+            width={165}
+            height={28}
             priority
           />
         </Link>
