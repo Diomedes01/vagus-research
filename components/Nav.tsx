@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 
@@ -16,10 +17,14 @@ export default function Nav() {
   return (
     <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border">
       <div className="max-w-layout mx-auto px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
-          <span className="font-mono text-[13px] font-medium tracking-[0.15em] uppercase text-text-primary">
-            Vagus Research
-          </span>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/images/logo.svg"
+            alt="Vagus Research"
+            width={180}
+            height={26}
+            priority
+          />
         </Link>
 
         {/* Desktop nav */}
