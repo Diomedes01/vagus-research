@@ -181,12 +181,6 @@ export default function AboutPage() {
                     accessible.
                   </p>
                 </div>
-                <div className="mt-8 flex items-center gap-2">
-                  <span className="text-sm text-text-light">Brought to you by</span>
-                  <span className="text-sm font-medium text-accent-teal">
-                    AZOROS PTY LTD
-                  </span>
-                </div>
               </div>
             </FadeIn>
 
