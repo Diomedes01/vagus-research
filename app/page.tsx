@@ -52,6 +52,8 @@ export default function HomePage() {
         className="bg-bg-primary relative overflow-hidden bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/images/hero.png')" }}
       >
+        {/* Overlay to ensure text readability over hero image */}
+        <div className="absolute inset-0 bg-white/70" />
         <div className="max-w-layout mx-auto px-6 py-16 md:py-20 lg:py-28 text-center relative z-10">
           <FadeIn>
             <p className="font-mono text-[11px] tracking-[0.15em] uppercase text-accent-teal mb-6">
