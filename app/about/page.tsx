@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Image from 'next/image'
 import NewsletterForm from '@/components/NewsletterForm'
 import FadeIn from '@/components/FadeIn'
 import { generateMetadata as genMeta, generateAboutPageJsonLd } from '@/lib/seo'
@@ -39,23 +40,16 @@ export default function AboutPage() {
       />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-bg-primary">
-        {/* Background pulse decoration */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-[0.04] pointer-events-none">
-          <svg width="600" height="600" viewBox="0 0 600 600" fill="none">
-            <circle cx="300" cy="300" r="250" stroke="#00B8A9" strokeWidth="1" />
-            <circle cx="300" cy="300" r="180" stroke="#00B8A9" strokeWidth="0.5" />
-            <circle cx="300" cy="300" r="110" stroke="#00B8A9" strokeWidth="0.5" />
-            <path
-              d="M50 300 L150 300 L190 180 L230 420 L270 120 L310 400 L350 300 L550 300"
-              stroke="#00B8A9"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </div>
-
+      <section className="relative overflow-hidden">
+        <Image
+          src="/images/about-hero.png"
+          alt=""
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-[#080E1C]/60" />
         <div className="max-w-layout mx-auto px-6 py-20 md:py-28 relative z-10">
           <FadeIn>
             <p className="font-mono text-[11px] tracking-[0.15em] uppercase text-accent-teal mb-5">
@@ -63,12 +57,12 @@ export default function AboutPage() {
             </p>
           </FadeIn>
           <FadeIn delay={100}>
-            <h1 className="font-display text-[40px] md:text-[56px] lg:text-[64px] font-light tracking-[-0.02em] text-text-primary leading-[1.1] max-w-3xl mb-6">
+            <h1 className="font-display text-[40px] md:text-[56px] lg:text-[64px] font-light tracking-[-0.02em] text-white leading-[1.1] max-w-3xl mb-6">
               About Vagus Research
             </h1>
           </FadeIn>
           <FadeIn delay={200}>
-            <p className="text-lg md:text-xl text-text-muted max-w-2xl leading-relaxed">
+            <p className="text-lg md:text-xl text-white/60 max-w-2xl leading-relaxed">
               An academic-grade information platform dedicated to the science of vagus nerve
               stimulation. Bridging the gap between clinical research and public understanding.
             </p>

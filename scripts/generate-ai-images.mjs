@@ -14,7 +14,7 @@ const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY })
 async function generateImage(prompt, outputPath) {
   try {
     const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash-image',
+      model: 'gemini-2.0-flash-exp-image-generation',
       contents: prompt,
       config: {
         responseModalities: ['image', 'text'],
