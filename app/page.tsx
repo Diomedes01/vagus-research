@@ -50,7 +50,7 @@ export default function HomePage() {
       {/* Hero */}
       <section
         className="bg-bg-primary relative overflow-hidden bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/images/hero.jpg')" }}
+        style={{ backgroundImage: "url('/images/hero.png')" }}
       >
         <div className="max-w-layout mx-auto px-6 py-16 md:py-20 lg:py-28 text-center relative z-10">
           <FadeIn>

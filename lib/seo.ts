@@ -4,7 +4,7 @@ const siteConfig = {
   name: 'Vagus Research',
   description: 'The Science of Vagus Nerve Stimulation — an academic research platform dedicated to evidence-based VNS science.',
   url: 'https://vagusresearch.com',
-  ogImage: '/images/og/default.jpg',
+  ogImage: '/images/og/default.png',
   creator: 'Vagus Research',
 }
 
