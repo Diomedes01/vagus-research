@@ -16,13 +16,13 @@ export default function Nav() {
 
   return (
     <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border">
-      <div className="max-w-layout mx-auto px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center">
+      <div className="max-w-layout mx-auto px-6 h-[72px] flex items-center justify-between">
+        <Link href="/" className="flex items-center" style={{ flexShrink: 0 }}>
           <Image
             src="/images/logo.svg"
             alt="Vagus Research"
-            width={165}
-            height={28}
+            width={210}
+            height={36}
             priority
           />
         </Link>
