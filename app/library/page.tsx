@@ -14,6 +14,7 @@ interface ArticleData {
   date: string
   readTime: string
   featured: boolean
+  image?: string
 }
 
 function useArticles() {
@@ -121,6 +122,7 @@ function LibraryContent() {
               excerpt={article.excerpt}
               date={article.date}
               readTime={article.readTime}
+              image={article.image}
             />
           ))}
         </div>

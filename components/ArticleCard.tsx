@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import TopicTag from './TopicTag'
 
 interface ArticleCardProps {
@@ -10,6 +11,7 @@ interface ArticleCardProps {
   excerpt: string
   date: string
   readTime: string
+  image?: string
 }
 
 /* ── Gradient colours per topic: [from, to] ── */
@@ -177,6 +179,7 @@ export default function ArticleCard({
   excerpt,
   date,
   readTime,
+  image,
 }: ArticleCardProps) {
   const [from, to] = topicColors[topic] || defaultColors
 
@@ -188,19 +191,36 @@ export default function ArticleCard({
         onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = `${from}08`)}
         onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '')}
       >
-        {/* Gradient header band */}
-        <div
-          className="relative h-2.5"
-          style={{ background: `linear-gradient(to right, ${from}, ${to})` }}
-        >
-          {/* Topic icon */}
-          <div
-            className="absolute -bottom-4 right-4 w-9 h-9 rounded-lg flex items-center justify-center text-white shadow-sm"
-            style={{ background: `linear-gradient(135deg, ${from}, ${to})` }}
-          >
-            <TopicIcon topic={topic} />
+        {/* Image or gradient header */}
+        {image ? (
+          <div className="relative h-40 overflow-hidden">
+            <Image
+              src={image}
+              alt={title}
+              fill
+              className="object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+            {/* Topic icon */}
+            <div
+              className="absolute bottom-3 right-3 w-9 h-9 rounded-lg flex items-center justify-center text-white shadow-sm"
+              style={{ background: `linear-gradient(135deg, ${from}, ${to})` }}
+            >
+              <TopicIcon topic={topic} />
+            </div>
           </div>
-        </div>
+        ) : (
+          <div
+            className="relative h-2.5"
+            style={{ background: `linear-gradient(to right, ${from}, ${to})` }}
+          >
+            <div
+              className="absolute -bottom-4 right-4 w-9 h-9 rounded-lg flex items-center justify-center text-white shadow-sm"
+              style={{ background: `linear-gradient(135deg, ${from}, ${to})` }}
+            >
+              <TopicIcon topic={topic} />
+            </div>
+          </div>
+        )}
 
         <div className="p-6 pt-5">
           <div className="flex items-center gap-3 mb-4">

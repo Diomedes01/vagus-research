@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation'
+import Image from 'next/image'
 import { getAllArticles, getArticleBySlug } from '@/lib/articles'
 import { generateMetadata as genMeta, generateArticleJsonLd } from '@/lib/seo'
 import ArticleCard from '@/components/ArticleCard'
@@ -114,6 +115,19 @@ export default function ArticlePage({ params }: PageProps) {
         <div className="flex gap-16">
           {/* Main content */}
           <div className="flex-1 min-w-0 max-w-article">
+            {/* Hero image */}
+            {frontmatter.image && (
+              <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden mb-8">
+                <Image
+                  src={frontmatter.image}
+                  alt={frontmatter.title}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            )}
+
             {/* Header */}
             <header className="mb-10">
               <div className="flex items-center gap-3 mb-4">
@@ -182,6 +196,7 @@ export default function ArticlePage({ params }: PageProps) {
                   excerpt={a.frontmatter.excerpt}
                   date={a.frontmatter.date}
                   readTime={a.frontmatter.readTime}
+                  image={a.frontmatter.image}
                 />
               ))}
             </div>

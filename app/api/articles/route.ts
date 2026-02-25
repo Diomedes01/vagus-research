@@ -13,6 +13,7 @@ export async function GET() {
     date: a.frontmatter.date,
     readTime: a.frontmatter.readTime,
     featured: a.frontmatter.featured,
+    image: a.frontmatter.image,
   }))
 
   return NextResponse.json(data)

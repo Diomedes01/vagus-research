@@ -124,6 +124,7 @@ export default function HomePage() {
                   excerpt={article.frontmatter.excerpt}
                   date={article.frontmatter.date}
                   readTime={article.frontmatter.readTime}
+                  image={article.frontmatter.image}
                 />
               </FadeIn>
             ))}
