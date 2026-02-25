@@ -64,12 +64,14 @@ export function generateArticleJsonLd({
   title,
   description,
   datePublished,
+  dateModified,
   url,
   image,
 }: {
   title: string
   description: string
   datePublished: string
+  dateModified?: string
   url: string
   image?: string
 }) {
@@ -79,6 +81,7 @@ export function generateArticleJsonLd({
     headline: title,
     description,
     datePublished,
+    dateModified: dateModified || datePublished,
     url,
     image: image || siteConfig.ogImage,
     author: {
@@ -103,6 +106,10 @@ export function generateOrganizationJsonLd() {
     name: siteConfig.name,
     url: siteConfig.url,
     description: siteConfig.description,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${siteConfig.url}/images/logo.png`,
+    },
     founder: {
       '@type': 'Organization',
       name: siteConfig.creator,
@@ -233,5 +240,20 @@ export function generateVideoPageJsonLd({
       name: siteConfig.name,
       url: siteConfig.url,
     },
+  }
+}
+
+export function generateBreadcrumbJsonLd(
+  items: { name: string; url?: string }[]
+) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: item.name,
+      ...(item.url ? { item: item.url } : {}),
+    })),
   }
 }

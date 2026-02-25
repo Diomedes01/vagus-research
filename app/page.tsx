@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import ArticleCard from '@/components/ArticleCard'
 import StatsBar from '@/components/StatsBar'
 import NewsletterForm from '@/components/NewsletterForm'
@@ -48,10 +49,15 @@ export default function HomePage() {
       />
 
       {/* Hero */}
-      <section
-        className="bg-bg-primary relative overflow-hidden bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/images/hero.png')" }}
-      >
+      <section className="bg-bg-primary relative overflow-hidden">
+        <Image
+          src="/images/hero.png"
+          alt=""
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
+        />
         {/* Overlay to ensure text readability over hero image */}
         <div className="absolute inset-0 bg-white/70" />
         <div className="max-w-layout mx-auto px-6 py-16 md:py-20 lg:py-28 text-center relative z-10">
