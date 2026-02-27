@@ -41,24 +41,24 @@ async function generateImage(prompt, outputPath) {
   }
 }
 
-const brandStyle = `Minimalist, scientific, academic illustration style. Dark navy background (#0A1628). Subtle, elegant, abstract. No text, no words, no letters, no labels. Clean composition with lots of negative space. Muted teal (#00B8A9) and blue (#2D7DD2) accent colours. High quality, editorial feel like Nature journal or The Lancet. Luminous, ethereal, glowing wireframe style with particle effects. 1200x630 aspect ratio.`
+const brandStyle = `Minimalist, scientific, academic illustration style. Dark navy background (#0A1628). Subtle, elegant, abstract. No text, no words, no letters, no labels. Clean composition with lots of negative space. Muted teal (#00B8A9) and blue (#2D7DD2) accent colours. High quality, editorial feel like Nature journal or The Lancet. Luminous, ethereal, glowing style with particle effects. 1200x630 aspect ratio.`
 
 const images = [
   {
     file: 'images/articles/vns-ptsd-hero.png',
-    prompt: `Abstract scientific illustration of PTSD and fear extinction neuroscience. Show a stylised brain with the amygdala highlighted in warm tones being gradually calmed by descending vagal pathways depicted as cool teal flowing light. Include subtle representations of the locus coeruleus and prefrontal cortex connected by luminous neural pathways. The overall mood should convey transformation from hyperarousal to calm regulation. ${brandStyle}`,
+    prompt: `DO NOT draw a brain silhouette or brain outline. Instead, create an abstract artistic scene: a shattered glass or crystal surface floating in dark space, with fragments slowly reassembling. Teal light threads (#00B8A9) connect the broken pieces, pulling them back together. Some fragments glow with warm amber light (representing trauma) while the reassembled sections glow cool teal (representing healing). Tiny luminous particles drift between the pieces. The mood is one of careful restoration — broken things becoming whole again. ${brandStyle}`,
   },
   {
     file: 'images/articles/vns-migraine-hero.png',
-    prompt: `Abstract scientific illustration of migraine pathophysiology and the trigeminal-vagal connection. Show a stylised brain with the trigeminal nerve system and vagus nerve converging at the brainstem. Depict cortical spreading depression as a subtle wave being suppressed by vagal input. Include flowing light paths representing descending pain modulation from the brainstem. ${brandStyle}`,
+    prompt: `DO NOT draw a brain silhouette or brain outline. Instead, create an abstract artistic scene: concentric pressure rings or ripples emanating from a bright white-hot epicentre point on the left side. The inner rings glow warm red/coral, transitioning through purple to cool blue and teal as they expand outward. Jagged lightning-bolt disruptions radiate from the epicentre but fade and smooth out as they travel right. The right side of the image has calm, smooth sinusoidal waves in teal, representing relief. Like a seismograph visualization of pain dissipating. ${brandStyle}`,
   },
   {
     file: 'images/articles/vns-stroke-hero.png',
-    prompt: `Abstract scientific illustration of stroke rehabilitation and targeted neuroplasticity. Show a stylised brain with the motor cortex highlighted, where damaged neural pathways are being rebuilt and strengthened. Depict new synaptic connections forming as luminous bridges of light, with the vagus nerve providing neuromodulatory signals represented as gentle pulses of teal energy flowing to the cortex. ${brandStyle}`,
+    prompt: `DO NOT draw a brain silhouette or brain outline. Instead, create an abstract artistic scene: a beautiful branching vascular tree, like a river delta or botanical root system viewed from above. The left branches are fully illuminated in teal (#00B8A9), representing healthy blood flow. The right branches transition from dim/dark to gradually illuminated, with a bright restoration point where flow is being re-established. Tiny glowing particles flow along the lit pathways like blood cells. The overall feel is organic, like an aerial photograph of a river system at night with bioluminescent water. ${brandStyle}`,
   },
   {
     file: 'images/articles/vns-tinnitus-hero.png',
-    prompt: `Abstract scientific illustration of auditory cortex reorganisation in tinnitus. Show a stylised representation of the auditory cortex with a tonotopic frequency map. Depict maladaptive neural synchrony being reversed — chaotic hypersynchronous patterns transforming into balanced, orderly frequency representations. Include subtle sound wave elements and the vagus nerve pathway providing modulatory input. ${brandStyle}`,
+    prompt: `DO NOT draw a brain silhouette or brain outline. Instead, create an abstract artistic scene: a large elegant cochlea/fibonacci spiral structure in the centre-left, rendered in luminous blue and teal wireframe with delicate hair-cell filaments radiating outward. On the left side, jagged chaotic sound wave patterns in warm red/coral represent the phantom ringing of tinnitus. On the right side, smooth harmonious sine waves in cool teal represent restored hearing. The spiral acts as the transition point — chaos enters, calm exits. Include subtle frequency spectrum bars below and floating particles throughout. ${brandStyle}`,
   },
 ]
 
