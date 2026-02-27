@@ -124,6 +124,7 @@ export default function ArticlePage({ params }: PageProps) {
                   fill
                   className="object-cover"
                   priority
+                  unoptimized={frontmatter.image.endsWith('.svg')}
                 />
               </div>
             )}

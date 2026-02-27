@@ -1,0 +1,235 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#0F2238"/>
+      <stop offset="100%" stop-color="#0A1628"/>
+    </radialGradient>
+    <radialGradient id="centreGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00B8A9" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#00B8A9" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="spiralGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00B8A9" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#2D7DD2" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#1A3A5C" stop-opacity="0.3"/>
+    </linearGradient>
+    <linearGradient id="calmWaveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00B8A9" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#00B8A9" stop-opacity="0.15"/>
+    </linearGradient>
+    <linearGradient id="jaggedWaveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF6B6B" stop-opacity="0.6"/>
+      <stop offset="60%" stop-color="#C04848" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#2D7DD2" stop-opacity="0.15"/>
+    </linearGradient>
+    <linearGradient id="transitionWaveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF6B6B" stop-opacity="0.4"/>
+      <stop offset="40%" stop-color="#7B4FBF" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#00B8A9" stop-opacity="0.5"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="bigGlow">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+
+  <!-- Centre glow -->
+  <ellipse cx="450" cy="315" rx="300" ry="280" fill="url(#centreGlow)" opacity="0.4"/>
+
+  <!-- COCHLEA SPIRAL - stylised golden-ratio spiral, left-of-centre -->
+  <g transform="translate(380, 310)" filter="url(#softGlow)">
+    <!-- Outer spiral turns -->
+    <path d="M 0,0
+      Q 0,-80 70,-80
+      Q 140,-80 140,0
+      Q 140,90 55,90
+      Q -20,90 -20,15
+      Q -20,-50 40,-50
+      Q 95,-50 95,10
+      Q 95,60 50,60
+      Q 10,60 10,20
+      Q 10,-15 38,-15
+      Q 62,-15 62,10
+      Q 62,32 45,32
+      Q 30,32 30,18"
+      stroke="#2D7DD2" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.6"/>
+
+    <!-- Inner glow spiral (slightly offset for depth) -->
+    <path d="M 0,0
+      Q 0,-80 70,-80
+      Q 140,-80 140,0
+      Q 140,90 55,90
+      Q -20,90 -20,15
+      Q -20,-50 40,-50
+      Q 95,-50 95,10
+      Q 95,60 50,60
+      Q 10,60 10,20
+      Q 10,-15 38,-15
+      Q 62,-15 62,10
+      Q 62,32 45,32
+      Q 30,32 30,18"
+      stroke="#00B8A9" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.4"/>
+
+    <!-- Centre point of cochlea -->
+    <circle cx="38" cy="18" r="4" fill="#00B8A9" opacity="0.6" filter="url(#glow)"/>
+    <circle cx="38" cy="18" r="2" fill="#FFFFFF" opacity="0.4"/>
+  </g>
+
+  <!-- HAIR CELLS along the spiral - tiny lines radiating outward -->
+  <g transform="translate(380, 310)" opacity="0.35" stroke="#00B8A9" stroke-width="1" stroke-linecap="round">
+    <!-- Along top of outer spiral -->
+    <line x1="20" y1="-65" x2="20" y2="-80"/>
+    <line x1="40" y1="-75" x2="40" y2="-90"/>
+    <line x1="60" y1="-78" x2="60" y2="-93"/>
+    <line x1="80" y1="-76" x2="80" y2="-91"/>
+    <line x1="100" y1="-70" x2="105" y2="-85"/>
+    <line x1="120" y1="-55" x2="128" y2="-68"/>
+    <!-- Right side -->
+    <line x1="138" y1="-30" x2="153" y2="-35"/>
+    <line x1="142" y1="0" x2="157" y2="0"/>
+    <line x1="138" y1="30" x2="153" y2="35"/>
+    <line x1="130" y1="55" x2="143" y2="63"/>
+    <line x1="110" y1="75" x2="118" y2="88"/>
+    <line x1="85" y1="88" x2="88" y2="103"/>
+    <line x1="55" y1="90" x2="55" y2="105"/>
+    <line x1="25" y1="85" x2="22" y2="100"/>
+    <line x1="0" y1="70" x2="-10" y2="80"/>
+    <line x1="-17" y1="45" x2="-30" y2="50"/>
+  </g>
+
+  <!-- SOUND WAVES - LEFT SIDE (disrupted/jagged - the tinnitus) -->
+  <g fill="none" stroke-linecap="round">
+    <!-- Jagged wave 1 - chaotic, high frequency -->
+    <path d="M 80,160 L 95,140 L 105,175 L 118,130 L 128,180 L 142,125 L 155,170 L 168,135 L 180,168 L 195,140 L 210,165 L 225,138 L 238,162 L 252,142 L 268,158"
+      stroke="#FF6B6B" stroke-width="2" opacity="0.55" filter="url(#glow)"/>
+
+    <!-- Jagged wave 2 -->
+    <path d="M 60,220 L 78,195 L 90,235 L 108,190 L 120,240 L 138,188 L 152,232 L 168,198 L 182,228 L 198,200 L 215,225 L 232,205 L 248,222 L 265,208 L 280,218"
+      stroke="#FF6B6B" stroke-width="1.8" opacity="0.45" filter="url(#glow)"/>
+
+    <!-- Jagged wave 3 -->
+    <path d="M 50,300 L 68,275 L 82,315 L 100,270 L 112,320 L 130,278 L 145,312 L 160,285 L 175,308 L 192,288 L 208,305 L 225,290 L 240,302"
+      stroke="#E05555" stroke-width="1.5" opacity="0.4"/>
+
+    <!-- Jagged wave 4 - below -->
+    <path d="M 65,380 L 80,360 L 92,392 L 108,355 L 120,395 L 136,362 L 150,388 L 165,368 L 178,385 L 195,370 L 210,382 L 228,372"
+      stroke="#E05555" stroke-width="1.5" opacity="0.35"/>
+
+    <!-- Jagged wave 5 - lowest -->
+    <path d="M 85,450 L 98,435 L 110,458 L 125,432 L 138,455 L 152,438 L 165,452 L 180,440 L 195,450 L 210,442"
+      stroke="#C04848" stroke-width="1.2" opacity="0.3"/>
+  </g>
+
+  <!-- TRANSITION ZONE - waves morphing from jagged to smooth -->
+  <g fill="none" stroke-linecap="round" filter="url(#glow)">
+    <!-- Transitioning wave 1 (starts jagged, becomes smooth) -->
+    <path d="M 268,158 Q 290,148 310,155 Q 340,165 360,152"
+      stroke="url(#transitionWaveGrad)" stroke-width="1.8" opacity="0.5"/>
+
+    <!-- Transitioning wave 2 -->
+    <path d="M 280,218 Q 305,210 330,218 Q 355,226 375,215"
+      stroke="url(#transitionWaveGrad)" stroke-width="1.5" opacity="0.4"/>
+  </g>
+
+  <!-- SOUND WAVES - RIGHT SIDE (smooth, harmonious - restored calm) -->
+  <g fill="none" stroke-linecap="round">
+    <!-- Smooth sine wave 1 -->
+    <path d="M 580,120 Q 620,105 660,120 Q 700,135 740,120 Q 780,105 820,120 Q 860,135 900,120 Q 940,105 980,120 Q 1020,135 1060,120 Q 1100,105 1140,120"
+      stroke="#00B8A9" stroke-width="2" opacity="0.5" filter="url(#softGlow)"/>
+
+    <!-- Smooth sine wave 2 -->
+    <path d="M 560,180 Q 605,162 650,180 Q 695,198 740,180 Q 785,162 830,180 Q 875,198 920,180 Q 965,162 1010,180 Q 1055,198 1100,180 Q 1145,162 1160,175"
+      stroke="#00B8A9" stroke-width="1.8" opacity="0.4" filter="url(#softGlow)"/>
+
+    <!-- Smooth sine wave 3 -->
+    <path d="M 550,240 Q 598,225 645,240 Q 692,255 740,240 Q 788,225 835,240 Q 882,255 930,240 Q 978,225 1025,240 Q 1072,255 1120,240"
+      stroke="#00B8A9" stroke-width="1.6" opacity="0.35"/>
+
+    <!-- Smooth sine wave 4 -->
+    <path d="M 560,300 Q 605,288 650,300 Q 695,312 740,300 Q 785,288 830,300 Q 875,312 920,300 Q 965,288 1010,300 Q 1055,312 1100,300"
+      stroke="#2D7DD2" stroke-width="1.5" opacity="0.3"/>
+
+    <!-- Smooth sine wave 5 -->
+    <path d="M 570,360 Q 612,350 655,360 Q 698,370 740,360 Q 782,350 825,360 Q 868,370 910,360 Q 952,350 995,360 Q 1038,370 1080,360"
+      stroke="#2D7DD2" stroke-width="1.3" opacity="0.28"/>
+
+    <!-- Smooth sine wave 6 -->
+    <path d="M 580,420 Q 620,412 660,420 Q 700,428 740,420 Q 780,412 820,420 Q 860,428 900,420 Q 940,412 980,420 Q 1020,428 1060,420"
+      stroke="#2D7DD2" stroke-width="1.2" opacity="0.22"/>
+
+    <!-- Smooth sine wave 7 -->
+    <path d="M 600,475 Q 638,468 675,475 Q 712,482 750,475 Q 788,468 825,475 Q 862,482 900,475 Q 938,468 975,475 Q 1012,482 1050,475"
+      stroke="#2D7DD2" stroke-width="1" opacity="0.18"/>
+  </g>
+
+  <!-- FREQUENCY SPECTRUM BARS - subtle vertical bars beneath cochlea -->
+  <g opacity="0.2" fill="#2D7DD2">
+    <rect x="340" y="490" width="3" height="35" rx="1.5"/>
+    <rect x="352" y="485" width="3" height="45" rx="1.5"/>
+    <rect x="364" y="492" width="3" height="30" rx="1.5"/>
+    <rect x="376" y="480" width="3" height="50" rx="1.5"/>
+    <rect x="388" y="488" width="3" height="38" rx="1.5"/>
+    <rect x="400" y="482" width="3" height="48" rx="1.5" fill="#00B8A9" opacity="0.6"/>
+    <rect x="412" y="486" width="3" height="42" rx="1.5" fill="#00B8A9" opacity="0.5"/>
+    <rect x="424" y="490" width="3" height="35" rx="1.5" fill="#00B8A9" opacity="0.4"/>
+    <rect x="436" y="492" width="3" height="30" rx="1.5"/>
+    <rect x="448" y="495" width="3" height="25" rx="1.5"/>
+    <rect x="460" y="493" width="3" height="28" rx="1.5"/>
+    <rect x="472" y="496" width="3" height="22" rx="1.5"/>
+    <rect x="484" y="498" width="3" height="18" rx="1.5"/>
+  </g>
+
+  <!-- VAGUS NERVE pathway - subtle line from cochlea area downward -->
+  <g filter="url(#softGlow)" opacity="0.3">
+    <path d="M 420,400 Q 430,430 435,460 Q 438,490 435,520 Q 430,550 425,580 Q 420,610 420,630"
+      stroke="#00B8A9" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <!-- Small branches off the nerve -->
+    <path d="M 435,460 Q 450,455 460,448" stroke="#00B8A9" stroke-width="1" fill="none" stroke-linecap="round"/>
+    <path d="M 435,520 Q 448,518 458,512" stroke="#00B8A9" stroke-width="1" fill="none" stroke-linecap="round"/>
+    <path d="M 430,490 Q 418,485 408,480" stroke="#00B8A9" stroke-width="1" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- Particles -->
+  <g opacity="0.4">
+    <!-- Chaotic particles left side -->
+    <circle cx="120" cy="180" r="1.5" fill="#FF6B6B"/>
+    <circle cx="180" cy="250" r="1" fill="#E05555"/>
+    <circle cx="100" cy="330" r="1.2" fill="#C04848"/>
+    <circle cx="160" cy="410" r="1" fill="#C04848"/>
+
+    <!-- Calm particles right side -->
+    <circle cx="700" cy="150" r="1.5" fill="#00B8A9"/>
+    <circle cx="850" cy="200" r="1" fill="#00B8A9"/>
+    <circle cx="950" cy="270" r="1.2" fill="#00B8A9"/>
+    <circle cx="800" cy="380" r="1" fill="#2D7DD2"/>
+    <circle cx="1000" cy="350" r="1" fill="#2D7DD2"/>
+    <circle cx="900" cy="450" r="1.5" fill="#00B8A9"/>
+    <circle cx="1080" cy="300" r="1" fill="#2D7DD2"/>
+  </g>
+
+  <!-- Direction arrow hint - subtle, showing transformation left to right -->
+  <g opacity="0.15" filter="url(#softGlow)">
+    <path d="M 260,315 L 540,315" stroke="#00B8A9" stroke-width="1" fill="none" stroke-dasharray="6,8" stroke-linecap="round"/>
+    <path d="M 530,308 L 545,315 L 530,322" stroke="#00B8A9" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

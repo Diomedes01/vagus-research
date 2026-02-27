@@ -199,6 +199,7 @@ export default function ArticleCard({
               alt={title}
               fill
               className="object-cover transition-transform duration-300 group-hover:scale-105"
+              unoptimized={image.endsWith('.svg')}
             />
             {/* Topic icon */}
             <div
