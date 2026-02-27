@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const article = getArticleBySlug(params.slug)
   if (!article) return {}
 
-  const ogImage = `/api/og?title=${encodeURIComponent(article.frontmatter.title)}&topic=${encodeURIComponent(article.frontmatter.topic)}`
+  const ogImage = `/api/og?title=${encodeURIComponent(article.frontmatter.title)}&topic=${encodeURIComponent(article.frontmatter.topic)}${article.frontmatter.image ? `&image=${encodeURIComponent(article.frontmatter.image)}` : ''}`
 
   return genMeta({
     title: article.frontmatter.title,
