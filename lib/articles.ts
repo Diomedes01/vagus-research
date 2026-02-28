@@ -15,6 +15,7 @@ export interface ArticleFrontmatter {
   author: string
   featured: boolean
   image?: string
+  faq?: { question: string; answer: string }[]
 }
 
 export interface Article {

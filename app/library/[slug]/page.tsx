@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import { getAllArticles, getArticleBySlug } from '@/lib/articles'
-import { generateMetadata as genMeta, generateArticleJsonLd } from '@/lib/seo'
+import { generateMetadata as genMeta, generateArticleJsonLd, generateFAQJsonLd } from '@/lib/seo'
 import ArticleCard from '@/components/ArticleCard'
 import TableOfContents from '@/components/TableOfContents'
 import NewsletterForm from '@/components/NewsletterForm'
@@ -47,6 +47,8 @@ function renderMarkdown(content: string): string {
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
     // Italic
     .replace(/\*(.*?)\*/g, '<em>$1</em>')
+    // Links
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-accent-blue hover:underline">$1</a>')
     // Paragraphs
     .replace(/\n\n/g, '</p><p>')
     // Line breaks
@@ -103,6 +105,15 @@ export default function ArticlePage({ params }: PageProps) {
         }}
       />
 
+      {frontmatter.faq && frontmatter.faq.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(generateFAQJsonLd(frontmatter.faq)),
+          }}
+        />
+      )}
+
       <article className="max-w-layout mx-auto px-6 py-12 md:py-16">
         <Breadcrumbs
           items={[
@@ -122,6 +133,7 @@ export default function ArticlePage({ params }: PageProps) {
                   src={frontmatter.image}
                   alt={frontmatter.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 720px"
                   className="object-cover"
                   priority
                   unoptimized={frontmatter.image.endsWith('.svg')}
