@@ -164,10 +164,10 @@ export default function AboutPage() {
                 </h2>
                 <div className="space-y-4 text-text-body">
                   <p className="leading-relaxed">
-                    Vagus Research is an initiative by AZOROS PTY LTD, based in Melbourne,
-                    Australia. We are dedicated to advancing the field of neuromodulation through
-                    education, research communication, and the development of accessible
-                    transcutaneous vagus nerve stimulation (taVNS) technology.
+                    Vagus Research is based in Melbourne, Australia. We are dedicated to advancing
+                    the field of neuromodulation through education, research communication, and
+                    the development of accessible transcutaneous vagus nerve stimulation (taVNS)
+                    technology.
                   </p>
                   <p className="leading-relaxed">
                     Our team draws on expertise in neuroscience, clinical research methodology,
@@ -175,9 +175,8 @@ export default function AboutPage() {
                     accessible.
                   </p>
                   <p className="leading-relaxed">
-                    AZOROS is developing a taVNS device informed by the peer-reviewed research
-                    presented on this platform. Our approach is research-first — we believe that
-                    understanding the science is a prerequisite to building effective technology.
+                    Our approach is research-first — we believe that understanding the science
+                    is a prerequisite to building effective technology.
                   </p>
                 </div>
               </div>
