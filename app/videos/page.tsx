@@ -17,71 +17,70 @@ export const metadata: Metadata = genMeta({
   path: '/videos',
 })
 
-// Add youtubeId once videos are uploaded (e.g. youtubeId: 'dQw4w9WgXcQ')
 const videos = [
   {
-    title: 'How Vagus Nerve Stimulation Works',
+    title: 'What Is Vagus Nerve Stimulation?',
     topic: 'Foundation',
-    duration: '8:45',
-    youtubeId: '',
+    duration: '2:11',
+    youtubeId: 'Dz4VvI46448',
     description:
-      'A clear explanation of how electrical stimulation of the vagus nerve modulates neural circuits, autonomic balance, and inflammatory pathways.',
+      'Dr Kevin Tracey, pioneer of bioelectronic medicine and CEO of the Feinstein Institutes, explains how VNS works and its FDA-approved applications for epilepsy, depression, and stroke rehabilitation.',
   },
   {
-    title: 'The Cholinergic Anti-Inflammatory Pathway',
+    title: 'Vagus Nerve — Neuroanatomy and Functions',
+    topic: 'Foundation',
+    duration: '4:10',
+    youtubeId: 'NSjHvaGnX5A',
+    description:
+      'A professionally animated overview of cranial nerve X anatomy, fibre composition, nuclei in the medulla, parasympathetic functions, and clinical implications of vagus nerve damage.',
+  },
+  {
+    title: 'Vagus Nerve Stimulation Explained (VNS/tVNS)',
+    topic: 'Foundation',
+    duration: '4:26',
+    youtubeId: 'PVw-kJkb5BY',
+    description:
+      'Neuroscience researcher Miles Wischnewski explains both invasive VNS and transcutaneous VNS, covering cervical vs auricular stimulation, parameters, and FDA-approved applications.',
+  },
+  {
+    title: 'VNS and the Immune System — Kevin Tracey Interview',
     topic: 'Inflammation',
-    duration: '7:20',
-    youtubeId: '',
+    duration: '64:00',
+    youtubeId: 'CU31kjTMaKk',
     description:
-      'How the vagus nerve regulates systemic inflammation through acetylcholine signalling and the spleen — the basis of bioelectronic medicine.',
+      'Dr Eric Topol interviews Dr Kevin Tracey on the inflammatory reflex, vagus nerve control of the immune system, FDA approval of VNS for rheumatoid arthritis, and the future of bioelectronic medicine.',
   },
   {
-    title: 'taVNS vs Implanted VNS',
-    topic: 'Foundation',
-    duration: '6:10',
-    youtubeId: '',
+    title: 'How VNS Helps Tackle Treatment-Resistant Depression',
+    topic: 'Depression',
+    duration: '23:55',
+    youtubeId: '6muvBCBAsJ8',
     description:
-      'Comparing transcutaneous auricular stimulation with surgically implanted devices — mechanisms, evidence, safety profiles, and clinical applications.',
+      'Professor Hamish McAllister-Williams of Newcastle University presents on how VNS is being used for difficult-to-treat depression, covering clinical trial evidence and neurostimulatory treatments.',
   },
   {
-    title: 'Vagus Nerve and Sleep',
-    topic: 'Sleep',
-    duration: '9:15',
-    youtubeId: '',
+    title: 'Vagus Nerve Stimulation (VNS) for Epilepsy',
+    topic: 'Epilepsy',
+    duration: '25:56',
+    youtubeId: 'SMhT3yOrmNE',
     description:
-      'Exploring the relationship between vagal tone, parasympathetic activity, and sleep architecture — what the research shows about VNS and sleep quality.',
+      'Dr Omar Danoun, a board-certified epileptologist, provides a comprehensive educational overview of VNS for epilepsy — how the device works, implantation, expected outcomes, and side effects.',
   },
   {
-    title: 'Understanding the Auricular Branch',
-    topic: 'Foundation',
-    duration: '5:30',
-    youtubeId: '',
+    title: 'VNS for Stroke Rehabilitation',
+    topic: 'Recovery',
+    duration: '27:04',
+    youtubeId: 'Stt6_j2hvcM',
     description:
-      'The anatomy of the auricular branch of the vagus nerve (ABVN) — why the ear is a gateway to non-invasive vagus nerve stimulation.',
+      'Dr Timea Hodics presents at the Stroke 360 Symposium (2024) on VNS paired with rehabilitation to improve upper-limb motor recovery after ischaemic stroke, including the FDA approval story.',
   },
   {
-    title: 'VNS for Anxiety and Stress',
-    topic: 'Anxiety',
-    duration: '10:00',
-    youtubeId: '',
+    title: 'VNS for Enhancing Plasticity and Brain Health',
+    topic: 'Neuroplasticity',
+    duration: '66:15',
+    youtubeId: 'qi0y0CKHZM4',
     description:
-      'Reviewing the clinical evidence for vagus nerve stimulation in anxiety disorders — from autonomic regulation to amygdala modulation.',
-  },
-  {
-    title: 'The Safety Profile of taVNS',
-    topic: 'Safety',
-    duration: '6:45',
-    youtubeId: '',
-    description:
-      'What 177 studies and 6,322 subjects tell us about the safety and tolerability of transcutaneous auricular vagus nerve stimulation.',
-  },
-  {
-    title: 'Future of Neuromodulation',
-    topic: 'Foundation',
-    duration: '11:30',
-    youtubeId: '',
-    description:
-      'Where the field is heading — personalised stimulation protocols, closed-loop systems, biomarker-guided dosing, and combination therapies.',
+      'An academic research presentation from the Center for BrainHealth on how non-invasive auricular VNS shows promise for improving brain health, function, and neural plasticity.',
   },
 ]
 
@@ -98,15 +97,12 @@ export default function VideosPage() {
           <p className="font-mono text-[11px] tracking-[0.1em] uppercase text-accent-teal mb-2">
             Watch & Learn
           </p>
-          <h1 className="font-display text-4xl md:text-[44px] mb-4" style={{ color: '#0A1628' }}>
+          <h1 className="font-display text-4xl md:text-[44px] text-text-primary mb-4">
             Videos
           </h1>
-          <p className="max-w-2xl" style={{ color: '#374151' }}>
-            Educational video content covering vagus nerve stimulation science, mechanisms of
-            action, research summaries, and clinical applications.
-          </p>
-          <p className="text-sm mt-3" style={{ color: '#6B7280' }}>
-            New episodes releasing soon. Subscribe to get notified.
+          <p className="max-w-2xl text-text-body">
+            Curated educational videos from researchers, universities, and medical institutions
+            covering vagus nerve stimulation science, mechanisms of action, and clinical applications.
           </p>
         </div>
       </FadeIn>
