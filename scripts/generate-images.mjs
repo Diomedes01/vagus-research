@@ -202,4 +202,68 @@ for (const hero of articleHeroes) {
   console.log(`✓ articles/${hero.file}`)
 }
 
+// ─── 4. AI-Generated Hero Images via Gemini ──────────────────
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY
+if (GEMINI_API_KEY) {
+  const stylePrompt = `Dark navy background (#0A1628). Luminous, glowing scientific illustration centered in the frame. No text, no labels, no watermarks. Photorealistic digital art style with soft bokeh particles and subtle light bloom. 1200x630 aspect ratio, landscape orientation.`
+
+  const geminiHeroes = [
+    {
+      file: 'vns-addiction-hero.png',
+      prompt: `${stylePrompt} Depict a glowing brain viewed from the side with the reward circuitry (nucleus accumbens, ventral tegmental area, prefrontal cortex) highlighted in warm amber and orange tones. Show neural pathways being modulated by a subtle teal electrical signal traveling along the vagus nerve from below. The reward circuits should appear to be calming down — transitioning from intense hot orange to cooler, balanced teal-blue tones, symbolising the regulation of craving and addiction pathways.`,
+    },
+    {
+      file: 'vns-heart-failure-hero.png',
+      prompt: `${stylePrompt} Depict an anatomically-inspired glowing human heart in cool blue and teal tones, with the vagus nerve visible as a luminous teal strand descending from above and wrapping around the heart. Show subtle electrical pulses traveling along the nerve in rhythmic waves. The heart should appear to be strengthening — with gentle radiating concentric rings of light emanating outward like a healthy heartbeat. Include faint ECG/heart rate waveform traces in the background in soft blue light.`,
+    },
+    {
+      file: 'vns-parkinsons-hero.png',
+      prompt: `${stylePrompt} Depict a glowing brain cross-section highlighting the substantia nigra and basal ganglia in warm gold and amber tones. Show dopaminergic pathways as luminous golden streams. A teal-coloured vagus nerve signal enters from below, representing neuroprotective stimulation. Include subtle molecular structures (alpha-synuclein proteins) dissolving into light particles, symbolising the potential neuroprotective effects. The overall mood should convey hope and neural restoration.`,
+    },
+  ]
+
+  console.log('\nGenerating AI hero images via Gemini...')
+  for (const hero of geminiHeroes) {
+    try {
+      console.log(`  Generating ${hero.file}...`)
+      const res = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp-image-generation:generateContent?key=${GEMINI_API_KEY}`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            contents: [{ parts: [{ text: hero.prompt }] }],
+            generationConfig: {
+              responseModalities: ['TEXT', 'IMAGE'],
+            },
+          }),
+        }
+      )
+      const data = await res.json()
+      if (!res.ok) {
+        console.error(`  ✗ ${hero.file}: API error ${res.status}`, data.error?.message || '')
+        continue
+      }
+      // Find the image part in the response
+      const parts = data.candidates?.[0]?.content?.parts || []
+      const imagePart = parts.find((p) => p.inlineData)
+      if (!imagePart) {
+        console.error(`  ✗ ${hero.file}: No image in response`)
+        continue
+      }
+      const imageBuffer = Buffer.from(imagePart.inlineData.data, 'base64')
+      // Resize to exact dimensions and save as PNG
+      await sharp(imageBuffer)
+        .resize(1200, 630, { fit: 'cover' })
+        .png({ quality: 90 })
+        .toFile(join(publicDir, 'images', 'articles', hero.file))
+      console.log(`  ✓ articles/${hero.file}`)
+    } catch (err) {
+      console.error(`  ✗ ${hero.file}: ${err.message}`)
+    }
+  }
+} else {
+  console.log('\nSkipping AI hero generation (no GEMINI_API_KEY set)')
+}
+
 console.log('\nAll images generated successfully!')
