@@ -18,6 +18,22 @@
   --border-light: #F3F4F6;
 }
 
+.dark {
+  --bg-primary: #0B1120;
+  --bg-white: #131C2E;
+  --bg-dark: #060D1A;
+  --bg-dark-mid: #0E1726;
+  --accent-blue: #5B9BD5;
+  --accent-teal: #2DD4BF;
+  --accent-teal-light: rgba(45,212,191,0.1);
+  --text-primary: #E8EAED;
+  --text-body: #BDC1C6;
+  --text-muted: #9AA0A6;
+  --text-light: #5F6368;
+  --border: #1E293B;
+  --border-light: #162032;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -46,6 +62,14 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #9CA3AF;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #374151;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #4B5563;
 }
 
 /* Article prose overrides */

@@ -112,7 +112,7 @@ export default function EvidenceTable({ studies }: EvidenceTableProps) {
   return (
     <div>
       {/* Search */}
-      <div className="bg-white border border-border rounded-xl p-6 mb-4">
+      <div className="bg-bg-white border border-border rounded-xl p-6 mb-4">
         <div className="relative">
           <svg
             className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-text-light"
@@ -156,7 +156,7 @@ export default function EvidenceTable({ studies }: EvidenceTableProps) {
       </div>
 
       {/* Filters */}
-      <div className="bg-white border border-border rounded-xl p-6 mb-8">
+      <div className="bg-bg-white border border-border rounded-xl p-6 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {/* Condition */}
           <div>
@@ -294,7 +294,7 @@ export default function EvidenceTable({ studies }: EvidenceTableProps) {
                 <button
                   onClick={() => setCondition('')}
                   aria-label={`Remove ${condition} filter`}
-                  className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-medium bg-blue-50 text-blue-700 border border-blue-200 hover:bg-blue-100 transition-colors"
+                  className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-medium bg-blue-50 dark:bg-blue-950 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800 hover:bg-blue-100 dark:hover:bg-blue-900 transition-colors"
                 >
                   {condition}
                   <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -318,7 +318,7 @@ export default function EvidenceTable({ studies }: EvidenceTableProps) {
                 <button
                   onClick={() => setStimulationType('')}
                   aria-label={`Remove ${stimulationType} filter`}
-                  className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-medium bg-gray-50 text-gray-600 border border-gray-200 hover:bg-gray-100 transition-colors"
+                  className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-medium bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
                 >
                   {stimulationType}
                   <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -347,7 +347,7 @@ export default function EvidenceTable({ studies }: EvidenceTableProps) {
           return (
             <div
               key={study.id}
-              className="bg-white border border-border rounded-xl p-5 hover:shadow-md hover:shadow-black/5 transition-all"
+              className="bg-bg-white border border-border rounded-xl p-5 hover:shadow-md hover:shadow-black/5 transition-all"
             >
               <div className="flex flex-col md:flex-row md:items-start gap-4">
                 <div className="flex-1 min-w-0">
@@ -367,10 +367,10 @@ export default function EvidenceTable({ studies }: EvidenceTableProps) {
                   <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-mono font-medium bg-accent-teal-light text-accent-teal border border-accent-teal/20">
                     {study.studyType}
                   </span>
-                  <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-mono font-medium bg-blue-50 text-blue-700 border border-blue-200">
+                  <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-mono font-medium bg-blue-50 dark:bg-blue-950 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800">
                     {study.condition}
                   </span>
-                  <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-mono font-medium bg-gray-50 text-gray-600 border border-gray-200">
+                  <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-mono font-medium bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700">
                     {study.stimulationType}
                   </span>
                 </div>

@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
+import ThemeToggle from './ThemeToggle'
 
 export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -15,7 +16,7 @@ export default function Nav() {
   ]
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border">
+    <nav className="sticky top-0 z-50 bg-[rgba(255,255,255,0.95)] dark:bg-[rgba(11,17,32,0.95)] backdrop-blur-sm border-b border-border">
       <div className="max-w-layout mx-auto px-6 h-[72px] flex items-center justify-between">
         <Link href="/" className="flex items-center" style={{ flexShrink: 0 }}>
           <Image
@@ -24,6 +25,7 @@ export default function Nav() {
             width={210}
             height={36}
             priority
+            className="dark:brightness-0 dark:invert"
           />
         </Link>
 
@@ -50,35 +52,39 @@ export default function Nav() {
             </svg>
             <kbd className="font-mono text-[10px]">⌘K</kbd>
           </button>
+          <ThemeToggle />
           <Link
             href="/#newsletter"
-            className="text-sm font-medium px-4 py-2 bg-accent-teal text-white rounded-lg hover:bg-accent-teal/90 transition-colors"
+            className="text-sm font-medium px-4 py-2 bg-accent-teal text-white rounded-lg hover:opacity-90 transition-colors"
           >
             Subscribe
           </Link>
         </div>
 
         {/* Mobile menu button */}
-        <button
-          className="md:hidden p-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-text-muted"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? (
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          ) : (
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          )}
-        </button>
+        <div className="md:hidden flex items-center gap-2">
+          <ThemeToggle />
+          <button
+            className="p-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-text-muted"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? (
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-border bg-white px-6 py-4 space-y-1">
+        <div className="md:hidden border-t border-border bg-bg-white px-6 py-4 space-y-1">
           {links.map((link) => (
             <Link
               key={link.href}

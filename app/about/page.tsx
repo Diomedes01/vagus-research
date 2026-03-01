@@ -49,7 +49,7 @@ export default function AboutPage() {
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-[#080E1C]/60" />
+        <div className="absolute inset-0 bg-[#080E1C]/60 dark:bg-[#080E1C]/80" />
         <div className="max-w-layout mx-auto px-6 py-20 md:py-28 relative z-10">
           <FadeIn>
             <p className="font-mono text-[11px] tracking-[0.15em] uppercase text-accent-teal mb-5">
@@ -71,7 +71,7 @@ export default function AboutPage() {
       </section>
 
       {/* Why This Platform Exists */}
-      <section className="bg-white border-y border-border">
+      <section className="bg-bg-white border-y border-border">
         <div className="max-w-layout mx-auto px-6 py-20 md:py-24">
           <FadeIn>
             <p className="font-mono text-[11px] tracking-[0.15em] uppercase text-accent-teal mb-10">
@@ -135,7 +135,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {approaches.map((item, i) => (
               <FadeIn key={item.title} delay={i * 100}>
-                <div className="bg-white rounded-xl p-6 h-full border border-border" style={{ borderLeft: '3px solid #00B8A9' }}>
+                <div className="bg-bg-white rounded-xl p-6 h-full border border-border" style={{ borderLeft: '3px solid #00B8A9' }}>
                   <h3 className="font-display text-lg text-text-primary font-medium mb-3">
                     {item.title}
                   </h3>
@@ -150,7 +150,7 @@ export default function AboutPage() {
       </section>
 
       {/* About Us + Contact */}
-      <section className="bg-white border-y border-border">
+      <section className="bg-bg-white border-y border-border">
         <div className="max-w-layout mx-auto px-6 py-20 md:py-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Left — About Us */}
@@ -164,15 +164,20 @@ export default function AboutPage() {
                 </h2>
                 <div className="space-y-4 text-text-body">
                   <p className="leading-relaxed">
-                    Vagus Research is based in Melbourne, Australia. We are dedicated to advancing
-                    the field of neuromodulation through education, research communication, and
-                    the development of accessible transcutaneous vagus nerve stimulation (taVNS)
-                    technology.
+                    Vagus Research is an initiative by AZOROS PTY LTD, based in Melbourne,
+                    Australia. We are dedicated to advancing the field of neuromodulation through
+                    education, research communication, and the development of accessible
+                    transcutaneous vagus nerve stimulation (taVNS) technology.
                   </p>
                   <p className="leading-relaxed">
                     Our team draws on expertise in neuroscience, clinical research methodology,
                     and science communication to create resources that are both rigorous and
                     accessible.
+                  </p>
+                  <p className="leading-relaxed">
+                    AZOROS is developing a taVNS device informed by the peer-reviewed research
+                    presented on this platform. Our approach is research-first — we believe that
+                    understanding the science is a prerequisite to building effective technology.
                   </p>
                 </div>
               </div>
@@ -227,7 +232,7 @@ export default function AboutPage() {
       <section className="bg-bg-primary">
         <div className="max-w-layout mx-auto px-6 py-16">
           <FadeIn>
-            <div className="bg-white rounded-xl p-6 md:p-8 border border-border" style={{ borderLeft: '3px solid #D97706' }}>
+            <div className="bg-bg-white rounded-xl p-6 md:p-8 border border-border" style={{ borderLeft: '3px solid #D97706' }}>
               <h3 className="font-display text-lg text-text-primary mb-3">Medical Disclaimer</h3>
               <p className="text-sm text-text-muted leading-relaxed">
                 The content on this website is for informational and educational purposes only.

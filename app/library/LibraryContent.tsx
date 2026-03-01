@@ -89,7 +89,7 @@ function LibraryContentInner() {
             className={`px-3.5 py-1.5 rounded-full text-sm font-medium transition-colors ${
               !activeTopic
                 ? 'bg-text-primary text-white'
-                : 'bg-white border border-border text-text-muted hover:border-text-light'
+                : 'bg-bg-white border border-border text-text-muted hover:border-text-light'
             }`}
           >
             All
@@ -101,7 +101,7 @@ function LibraryContentInner() {
               className={`px-3.5 py-1.5 rounded-full text-sm font-medium transition-colors ${
                 activeTopic === topic
                   ? 'bg-text-primary text-white'
-                  : 'bg-white border border-border text-text-muted hover:border-text-light'
+                  : 'bg-bg-white border border-border text-text-muted hover:border-text-light'
               }`}
             >
               {topic}

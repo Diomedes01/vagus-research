@@ -128,7 +128,7 @@ export default function CommandPalette({ items }: CommandPaletteProps) {
       {/* Modal */}
       <div className="relative flex justify-center pt-[15vh] px-4">
         <div
-          className="w-full max-w-lg bg-white rounded-xl shadow-2xl border border-border overflow-hidden"
+          className="w-full max-w-lg bg-bg-white rounded-xl shadow-2xl border border-border overflow-hidden"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Search input */}

@@ -30,6 +30,9 @@ const topicColors: Record<string, [string, string]> = {
   'Heart Health': ['#881337', '#e11d48'],
   Tinnitus: ['#134e4a', '#14b8a6'],
   PTSD: ['#1e1b4b', '#6366f1'],
+  "Parkinson's Disease": ['#134e4a', '#14b8a6'],
+  'Heart Failure': ['#881337', '#e11d48'],
+  Addiction: ['#78350f', '#d97706'],
 }
 const defaultColors: [string, string] = ['#0A1628', '#2D7DD2']
 
@@ -186,7 +189,7 @@ export default function ArticleCard({
   return (
     <Link href={`/library/${slug}`} className="group block">
       <article
-        className="bg-white border border-border rounded-xl overflow-hidden h-full transition-all duration-200 hover:shadow-lg hover:shadow-black/5 hover:-translate-y-0.5"
+        className="bg-bg-white border border-border rounded-xl overflow-hidden h-full transition-all duration-200 hover:shadow-lg hover:shadow-black/5 hover:-translate-y-0.5"
         style={{ borderLeft: `4px solid ${from}` }}
         onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = `${from}08`)}
         onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '')}

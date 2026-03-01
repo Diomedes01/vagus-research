@@ -61,7 +61,7 @@ export default function NewsletterForm() {
                 placeholder="your@email.com"
                 required
                 aria-label="Email address"
-                className="flex-1 px-4 py-3 bg-white border border-border rounded-lg text-sm text-text-body placeholder:text-text-light focus:outline-none focus:ring-2 focus:ring-accent-teal/20 focus:border-accent-teal transition-colors"
+                className="flex-1 px-4 py-3 bg-bg-white border border-border rounded-lg text-sm text-text-body placeholder:text-text-light focus:outline-none focus:ring-2 focus:ring-accent-teal/20 focus:border-accent-teal transition-colors"
               />
               <button
                 type="submit"

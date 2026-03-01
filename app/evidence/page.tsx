@@ -69,7 +69,7 @@ export default function EvidencePage() {
         ].map((stat) => (
           <div
             key={stat.label}
-            className="bg-white border border-border rounded-xl p-4 text-center"
+            className="bg-bg-white border border-border rounded-xl p-4 text-center"
           >
             <div className="font-mono text-2xl font-medium text-accent-teal">
               {stat.value}

@@ -32,7 +32,7 @@ export default function VideoCard({
   }
 
   return (
-    <div className="group bg-white border border-border rounded-xl overflow-hidden hover:shadow-lg hover:shadow-black/5 hover:-translate-y-0.5 transition-all duration-200">
+    <div className="group bg-bg-white border border-border rounded-xl overflow-hidden hover:shadow-lg hover:shadow-black/5 hover:-translate-y-0.5 transition-all duration-200">
       {/* Thumbnail / Player */}
       <div className="relative aspect-video overflow-hidden" style={{ backgroundColor: '#0A1628' }}>
         {playing && youtubeId ? (
@@ -114,11 +114,11 @@ export default function VideoCard({
         <div className="flex items-center gap-2 mb-3">
           <TopicTag topic={topic} />
         </div>
-        <h3 className="text-[15px] font-semibold mb-2 group-hover:text-accent-blue transition-colors leading-snug" style={{ color: '#0A1628' }}>
+        <h3 className="text-[15px] font-semibold mb-2 group-hover:text-accent-blue transition-colors leading-snug text-text-primary">
           {title}
         </h3>
         {description && (
-          <p className="text-[13px] leading-relaxed line-clamp-2" style={{ color: '#374151' }}>
+          <p className="text-[13px] leading-relaxed line-clamp-2 text-text-body">
             {description}
           </p>
         )}

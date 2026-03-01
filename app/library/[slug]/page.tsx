@@ -178,7 +178,7 @@ export default function ArticlePage({ params }: PageProps) {
                 {frontmatter.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-3 py-1 bg-bg-primary border border-border-light rounded-full text-xs text-text-muted font-medium"
+                    className="px-3 py-1 bg-bg-primary border border-border rounded-full text-xs text-text-muted font-medium"
                   >
                     {tag}
                   </span>
@@ -196,7 +196,7 @@ export default function ArticlePage({ params }: PageProps) {
 
       {/* Related Articles */}
       {related.length > 0 && (
-        <section className="bg-white border-t border-border">
+        <section className="bg-bg-white border-t border-border">
           <div className="max-w-layout mx-auto px-6 py-16">
             <h2 className="font-display text-2xl text-text-primary mb-8">Related Articles</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
