@@ -28,6 +28,9 @@ const topics = [
   'Heart Health',
   'Tinnitus',
   'PTSD',
+  "Parkinson's Disease",
+  'Heart Failure',
+  'Addiction',
 ]
 
 export default function HomePage() {
@@ -59,7 +62,7 @@ export default function HomePage() {
           sizes="100vw"
         />
         {/* Overlay to ensure text readability over hero image */}
-        <div className="absolute inset-0 bg-white/70" />
+        <div className="absolute inset-0 bg-[rgba(255,255,255,0.7)] dark:bg-[rgba(11,17,32,0.85)]" />
         <div className="max-w-layout mx-auto px-6 py-16 md:py-20 lg:py-28 text-center relative z-10">
           <FadeIn>
             <p className="font-mono text-[11px] tracking-[0.15em] uppercase text-accent-teal mb-6">
@@ -67,7 +70,7 @@ export default function HomePage() {
             </p>
           </FadeIn>
           <FadeIn delay={100}>
-            <h1 className="font-display text-[40px] md:text-[56px] lg:text-[64px] font-light tracking-[-0.02em] text-bg-dark leading-[1.1] max-w-4xl mx-auto mb-6">
+            <h1 className="font-display text-[40px] md:text-[56px] lg:text-[64px] font-light tracking-[-0.02em] text-bg-dark dark:text-white leading-[1.1] max-w-4xl mx-auto mb-6">
               The Science of Vagus Nerve Stimulation
             </h1>
           </FadeIn>
@@ -87,7 +90,7 @@ export default function HomePage() {
               </Link>
               <Link
                 href="/evidence"
-                className="inline-flex items-center justify-center px-6 py-3 bg-white text-bg-dark text-sm font-medium rounded-lg border border-border hover:border-text-muted transition-colors"
+                className="inline-flex items-center justify-center px-6 py-3 bg-bg-white text-text-primary text-sm font-medium rounded-lg border border-border hover:border-text-muted transition-colors"
               >
                 Evidence Database
               </Link>
@@ -97,7 +100,7 @@ export default function HomePage() {
       </section>
 
       {/* Featured Research */}
-      <section className="bg-white border-y border-border">
+      <section className="bg-bg-white border-y border-border">
         <div className="max-w-layout mx-auto px-6 py-20 md:py-24">
           <FadeIn>
             <div className="flex items-end justify-between mb-12">
@@ -158,7 +161,7 @@ export default function HomePage() {
                 <Link
                   key={topic}
                   href={`/library?topic=${encodeURIComponent(topic)}`}
-                  className="px-5 py-2.5 bg-white border border-border rounded-full text-sm font-medium text-text-body hover:border-accent-teal hover:text-accent-teal transition-colors"
+                  className="px-5 py-2.5 bg-bg-white border border-border rounded-full text-sm font-medium text-text-body hover:border-accent-teal hover:text-accent-teal transition-colors"
                 >
                   {topic}
                 </Link>

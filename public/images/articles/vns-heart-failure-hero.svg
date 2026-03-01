@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#881337"/>
+      <stop offset="100%" stop-color="#e11d48"/>
+    </linearGradient>
+    <linearGradient id="pulse" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#ffffff" stop-opacity="0.25"/>
+      <stop offset="70%" stop-color="#ffffff" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Heart silhouette -->
+  <path d="M600 520 C600 520, 280 340, 280 220 C280 140, 340 80, 420 80 C480 80, 540 120, 600 200 C660 120, 720 80, 780 80 C860 80, 920 140, 920 220 C920 340, 600 520, 600 520Z" stroke="#ffffff" stroke-width="1.5" fill="none" opacity="0.12"/>
+  <path d="M600 480 C600 480, 340 330, 340 230 C340 165, 388 115, 450 115 C500 115, 545 145, 600 210 C655 145, 700 115, 750 115 C812 115, 860 165, 860 230 C860 330, 600 480, 600 480Z" stroke="#ffffff" stroke-width="1" fill="none" opacity="0.08"/>
+  <!-- ECG line -->
+  <polyline points="0,315 200,315 280,315 320,315 360,280 380,350 400,200 420,400 440,260 460,315 500,315 600,315 680,315 720,315 760,280 780,350 800,200 820,400 840,260 860,315 900,315 1000,315 1200,315" stroke="url(#pulse)" stroke-width="2" fill="none"/>
+  <!-- Concentric circles (heartbeat waves) -->
+  <circle cx="600" cy="300" r="100" stroke="#ffffff" stroke-width="0.8" fill="none" opacity="0.06"/>
+  <circle cx="600" cy="300" r="160" stroke="#ffffff" stroke-width="0.8" fill="none" opacity="0.05"/>
+  <circle cx="600" cy="300" r="220" stroke="#ffffff" stroke-width="0.8" fill="none" opacity="0.04"/>
+  <circle cx="600" cy="300" r="280" stroke="#ffffff" stroke-width="0.8" fill="none" opacity="0.03"/>
+</svg>
