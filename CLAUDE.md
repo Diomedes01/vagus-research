@@ -1,12 +1,11 @@
 # Vagus Research — Project Guidelines
 
 ## Project Overview
-**vagusresearch.com.au** — A minimalist, academic-grade research platform dedicated to vagus nerve stimulation (VNS) science. The platform serves as an authoritative information hub featuring a curated research library, searchable evidence database, video content, and newsletter capture. It will eventually promote an AZOROS taVNS device, but the primary purpose is education and authority-building.
+**vagusresearch.com.au** — A minimalist, academic-grade research platform dedicated to vagus nerve stimulation (VNS) science. The platform serves as an authoritative information hub featuring a curated research library, searchable evidence database, video content, and newsletter capture. The primary purpose is education and authority-building.
 
 ## Brand
 - **Name:** Vagus Research
 - **Tagline:** "The Science of Vagus Nerve Stimulation"
-- **Company:** AZOROS PTY LTD, Melbourne, Australia
 - **Domain:** vagusresearch.com.au
 - **Positioning:** Academic authority meets premium health tech. NOT wellness-woo, NOT a generic health blog. Think Nature Index meets Stripe documentation.
 
@@ -86,7 +85,7 @@ Data label:      JetBrains Mono 12-13px, weight 500, uppercase, tracking 0.1em
 - **Key Stats Bar:** Dark navy bar with 4 statistics in JetBrains Mono: "177 Studies Analysed", "6,322+ Subjects", "21+ Clinical Populations", "30+ Years of Research"
 - **Topic Navigator:** Grid of topic pills/tags that link to filtered library views (Anxiety, Sleep, Inflammation, Depression, Recovery, Neuroplasticity, Gut Health, Pain, etc.)
 - **Newsletter CTA:** Clean section with heading, description, email input, and submit button. "Join researchers and practitioners exploring the science of vagus nerve stimulation."
-- **Footer:** Logo, nav links, AZOROS PTY LTD credit, medical disclaimer, social links.
+- **Footer:** Logo, nav links, medical disclaimer, social links.
 
 ### 2. Research Library (/library)
 **Layout:**
@@ -126,7 +125,6 @@ Data label:      JetBrains Mono 12-13px, weight 500, uppercase, tracking 0.1em
 ### 6. About (/about)
 **Layout:**
 - Mission statement
-- Brief intro to AZOROS PTY LTD
 - Why this platform exists
 - Medical disclaimer (prominent)
 - Contact information
@@ -202,7 +200,7 @@ Store as JSON in `/content/evidence.json` — loaded and filtered client-side.
 ## Important Content Guidelines
 - Always cite peer-reviewed sources
 - Use language like "research suggests," "clinical trials have shown," "evidence indicates"
-- Never make therapeutic claims about AZOROS products
+- Never make therapeutic claims about any products
 - Include medical disclaimer on every page footer
 - Educational framing only — this is NOT a product marketing site
 - Australian English spelling (analyse, colour, organisation, etc.)
