@@ -40,21 +40,50 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Vagus Research — The Science of Vagus Nerve Stimulation',
     description:
-      'An academic research platform dedicated to the science of vagus nerve stimulation.',
+      'An academic research platform dedicated to the science of vagus nerve stimulation. Curated evidence from 177+ studies.',
     url: 'https://vagusresearch.com',
     siteName: 'Vagus Research',
+    images: [
+      {
+        url: '/images/og/default.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Vagus Research — The Science of Vagus Nerve Stimulation',
+        type: 'image/jpeg',
+      },
+    ],
     locale: 'en_AU',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Vagus Research',
+    site: '@vagusresearch',
+    creator: '@vagusresearch',
+    title: 'Vagus Research — The Science of Vagus Nerve Stimulation',
     description:
-      'The Science of Vagus Nerve Stimulation',
+      'An academic research platform dedicated to the science of vagus nerve stimulation.',
+    images: [
+      {
+        url: '/images/og/default.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Vagus Research — The Science of Vagus Nerve Stimulation',
+      },
+    ],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  other: {
+    'og:locale:alternate': 'en_US',
   },
 }
 

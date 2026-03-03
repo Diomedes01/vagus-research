@@ -1,4 +1,4 @@
-import { generateMetadata as genMeta, generateCollectionPageJsonLd } from '@/lib/seo'
+import { generateMetadata as genMeta, generateCollectionPageJsonLd, siteConfig } from '@/lib/seo'
 import LibraryContent from './LibraryContent'
 import type { Metadata } from 'next'
 
@@ -20,7 +20,7 @@ export default function LibraryPage() {
               name: 'Vagus Research Library',
               description:
                 'A curated collection of evidence-based articles on vagus nerve stimulation science.',
-              url: 'https://vagusresearch.com/library',
+              url: `${siteConfig.url}/library`,
             })
           ),
         }}

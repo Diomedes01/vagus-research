@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import { getAllArticles, getArticleBySlug } from '@/lib/articles'
-import { generateMetadata as genMeta, generateArticleJsonLd, generateFAQJsonLd } from '@/lib/seo'
+import { generateMetadata as genMeta, generateArticleJsonLd, generateFAQJsonLd, generateBreadcrumbJsonLd, siteConfig } from '@/lib/seo'
 import ArticleCard from '@/components/ArticleCard'
 import TableOfContents from '@/components/TableOfContents'
 import NewsletterForm from '@/components/NewsletterForm'
@@ -34,6 +34,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     path: `/library/${params.slug}`,
     image: ogImage,
     type: 'article',
+    publishedTime: article.frontmatter.date,
+    section: article.frontmatter.topic,
+    tags: article.frontmatter.tags,
   })
 }
 
@@ -98,9 +101,24 @@ export default function ArticlePage({ params }: PageProps) {
               title: frontmatter.title,
               description: frontmatter.excerpt,
               datePublished: frontmatter.date,
-              url: `https://vagusresearch.com/library/${params.slug}`,
+              slug: params.slug,
               image: frontmatter.image,
+              section: frontmatter.topic,
+              tags: frontmatter.tags,
             })
+          ),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateBreadcrumbJsonLd([
+              { name: 'Home', url: siteConfig.url },
+              { name: 'Library', url: `${siteConfig.url}/library` },
+              { name: frontmatter.title },
+            ])
           ),
         }}
       />

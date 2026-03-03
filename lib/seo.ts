@@ -1,11 +1,12 @@
 import { Metadata } from 'next'
 
-const siteConfig = {
+export const siteConfig = {
   name: 'Vagus Research',
   description: 'The Science of Vagus Nerve Stimulation — an academic research platform dedicated to evidence-based VNS science.',
   url: 'https://vagusresearch.com',
-  ogImage: '/images/og/default.png',
+  ogImage: '/images/og/default.jpg',
   creator: 'Vagus Research',
+  twitterHandle: '@vagusresearch',
 }
 
 export function generateMetadata({
@@ -14,28 +15,65 @@ export function generateMetadata({
   path = '',
   image,
   type = 'website',
+  publishedTime,
+  modifiedTime,
+  section,
+  tags,
 }: {
   title: string
   description: string
   path?: string
   image?: string
   type?: 'website' | 'article'
+  publishedTime?: string
+  modifiedTime?: string
+  section?: string
+  tags?: string[]
 }): Metadata {
   const url = `${siteConfig.url}${path}`
-  const ogImage = image || siteConfig.ogImage
+  const ogImage = image || `/api/og?title=${encodeURIComponent(title)}`
+
+  const openGraph: Metadata['openGraph'] = {
+    title,
+    description,
+    url,
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: ogImage,
+        width: 1200,
+        height: 630,
+        alt: title,
+        type: 'image/png',
+      },
+    ],
+    locale: 'en_AU',
+    type,
+  }
+
+  if (type === 'article' && openGraph) {
+    Object.assign(openGraph, {
+      ...(publishedTime && { publishedTime }),
+      ...(modifiedTime && { modifiedTime }),
+      ...(section && { section }),
+      ...(tags && { tags }),
+      authors: [siteConfig.name],
+    })
+  }
 
   return {
-    title: `${title} | ${siteConfig.name}`,
+    title,
     description,
-    metadataBase: new URL(siteConfig.url),
     alternates: {
       canonical: url,
     },
-    openGraph: {
-      title: `${title} | ${siteConfig.name}`,
+    openGraph,
+    twitter: {
+      card: 'summary_large_image',
+      site: siteConfig.twitterHandle,
+      creator: siteConfig.twitterHandle,
+      title,
       description,
-      url,
-      siteName: siteConfig.name,
       images: [
         {
           url: ogImage,
@@ -44,14 +82,6 @@ export function generateMetadata({
           alt: title,
         },
       ],
-      locale: 'en_AU',
-      type,
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: `${title} | ${siteConfig.name}`,
-      description,
-      images: [ogImage],
     },
     robots: {
       index: true,
@@ -65,16 +95,25 @@ export function generateArticleJsonLd({
   description,
   datePublished,
   dateModified,
-  url,
+  slug,
   image,
+  section,
+  tags,
 }: {
   title: string
   description: string
   datePublished: string
   dateModified?: string
-  url: string
+  slug: string
   image?: string
+  section?: string
+  tags?: string[]
 }) {
+  const url = `${siteConfig.url}/library/${slug}`
+  const ogImage = image
+    ? `${siteConfig.url}${image}`
+    : `${siteConfig.url}/api/og?title=${encodeURIComponent(title)}${section ? `&topic=${encodeURIComponent(section)}` : ''}`
+
   return {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -83,19 +122,28 @@ export function generateArticleJsonLd({
     datePublished,
     dateModified: dateModified || datePublished,
     url,
-    image: image || siteConfig.ogImage,
+    image: ogImage,
+    ...(section && { articleSection: section }),
+    ...(tags && { keywords: tags.join(', ') }),
     author: {
       '@type': 'Organization',
       name: siteConfig.name,
+      url: siteConfig.url,
     },
     publisher: {
       '@type': 'Organization',
       name: siteConfig.name,
+      url: siteConfig.url,
       logo: {
         '@type': 'ImageObject',
         url: `${siteConfig.url}/images/logo.png`,
       },
     },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': url,
+    },
+    inLanguage: 'en-AU',
   }
 }
 

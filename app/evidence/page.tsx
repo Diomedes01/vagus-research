@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import EvidenceTable from '@/components/EvidenceTable'
 import Breadcrumbs from '@/components/Breadcrumbs'
-import { generateMetadata as genMeta, generateDatasetJsonLd } from '@/lib/seo'
+import { generateMetadata as genMeta, generateDatasetJsonLd, siteConfig } from '@/lib/seo'
 import evidenceData from '@/content/evidence.json'
 import { Study } from '@/lib/evidence'
 
@@ -19,7 +19,7 @@ export default function EvidencePage() {
     name: 'Vagus Nerve Stimulation Evidence Database',
     description:
       'A curated collection of peer-reviewed research on vagus nerve stimulation, including RCTs, meta-analyses, and systematic reviews.',
-    url: 'https://vagusresearch.com/evidence',
+    url: `${siteConfig.url}/evidence`,
     size: studies.length,
   })
 

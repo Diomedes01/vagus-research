@@ -1,13 +1,13 @@
 import { Metadata } from 'next'
 import VideoCard from '@/components/VideoCard'
 import FadeIn from '@/components/FadeIn'
-import { generateMetadata as genMeta, generateVideoPageJsonLd } from '@/lib/seo'
+import { generateMetadata as genMeta, generateVideoPageJsonLd, siteConfig } from '@/lib/seo'
 
 const jsonLd = generateVideoPageJsonLd({
   name: 'Vagus Nerve Stimulation Videos',
   description:
     'Educational video content covering vagus nerve stimulation science, mechanisms of action, research summaries, and clinical applications.',
-  url: 'https://vagusresearch.com/videos',
+  url: `${siteConfig.url}/videos`,
 })
 
 export const metadata: Metadata = genMeta({
